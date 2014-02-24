@@ -1,0 +1,109 @@
+<h1>Bienvenue <?php echo $user->getEmail() ?></h1>
+<a href="<?php echo $this->url('add',array('action'=>'addHive'))?>">Ajouter une ruche</a>
+<div id="list-hives">
+    <h2>Liste de vos rûches</h2>
+    <ul>
+        <?php
+            for ($i=0;$i<sizeof($hives);$i++) {
+                echo "<li id=".$hives[$i]->getId().">".$hives[$i]->getName()."</li>";?>
+                    <a class="idHiveDelete" href="<?php echo $this->url('delete',array('action'=>'deletehive', 'id'=>$hives[$i]->getId()))?>">
+                        <span id="<?php echo $hives[$i]->getId(); ?>" class="glyphicon glyphicon-remove-circle idHiveDelete" data-toggle="modal" data-target="#myModalDelete"></span>
+                    </a>
+                    <a class="idHiveUpdate" href="<?php echo $this->url('update',array('action'=>'updatehive', 'id'=>$hives[$i]->getId()))?>">
+                        <span id="<?php echo $hives[$i]->getId(); ?>" class="glyphicon glyphicon-pencil idHiveDelete" data-toggle="modal" data-target="#myModalUpdate"></span>
+                    </a>
+        
+                
+            <?php }?>
+    </ul>
+</div>
+<div id="map">
+    <?php echo $mapHelper->render($map); ?>
+</div>
+<div class="modal fade" id="myModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Supprimer une rûche</h4>
+      </div>
+      <div class="modal-body">
+        <p>Voulez-vous vraiment supprimer cette rûche ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a id="idHiveDelete" href="">Supprimer</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="myModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Supprimer une rûche</h4>
+      </div>
+      <div class="modal-body">
+        <p>Modification de la rûche</p>
+            <?php
+                $form = $this->form;
+                $form->setAttribute('action', $this->url('update', array('action' => 'updateHive')));
+                $form->prepare();
+                echo $this->form()->openTag($form);
+            ?>
+            <table class="zend_form">
+                <tr>
+                    <td>
+                        <?php echo $this->formRow($form->get('name'));?>
+                    </td>
+                </tr>
+
+                <!--<tr>
+                    <td><?php echo $this->formLabel($form->get('latitude')); ?></td>
+                    <td><?php echo $this->formInput($form->get('latitude'));
+                        echo $this->formElementErrors($form->get('latitude'));?></td>
+                </tr>-->
+
+                <tr>
+                    <td>
+                        <?php echo $this->formRow($form->get('longitude')); ?>
+                    </td>
+                </tr>
+
+                    <tr>
+                    <td>
+                        <?php echo $this->formRow($form->get('latitude')); ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <?php echo $this->formRow($form->get('submit')); ?>
+                    </td>
+                </tr>
+            </table>
+
+        <?php echo $this->form()->closeTag($form); ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a id="idHiveUpdate" href="">Modifier</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script>
+$('.idHiveDelete').click(function() {
+    $('#idHiveDelete').attr('href',$(this).attr('href'));
+})
+$('.idHiveUpdate').click(function() {
+    $('#idHiveUpdate').attr('href',$(this).attr('href'));
+})
+
+
+
+</script>

@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}</style><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style><link href="Apiculture_fichiers/css.css" rel="stylesheet" type="text/css"><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style div,.gm-style span,.gm-style label,.gm-style a{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400}.gm-style div,.gm-style span,.gm-style label{text-decoration:none}.gm-style img{border:0;padding:0;margin:0}</style>
+        <meta charset="utf-8">
+        <title>Apiculture</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Le styles -->
+        <link href="Apiculture_fichiers/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
+<link href="Apiculture_fichiers/bootstrap-theme.css" media="screen" rel="stylesheet" type="text/css">
+<link href="Apiculture_fichiers/style.css" media="screen" rel="stylesheet" type="text/css">
+<link href="http://apiculture/img/Favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+        <!-- Scripts -->
+        <!--[if lt IE 9]><script type="text/javascript" src="/js/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script type="text/javascript" src="/js/respond.min.js"></script><![endif]-->
+<script style="" type="text/javascript" src="Apiculture_fichiers/jquery.js"></script>
+<script type="text/javascript" src="Apiculture_fichiers/bootstrap.js"></script> 
+    <!-- START Zend Developer Toolbar Style -->
+<style type="text/css" media="all">
+#zend-developer-toolbar {
+    left: 0;
+    bottom: 0;
+    width:100%;
+    height: 40px;
+    color: #eee;
+    z-index: 1337;
+    position: fixed;
+    border-top: 1px solid #111;
+    background: #2C2C2C;
+    background: -moz-linear-gradient(top,#333, #222);
+    background: -ms-linear-gradient(top,#333, #222);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#222));
+    background: -webkit-linear-gradient(top, 333, #222);
+    background: -o-linear-gradient(top, #333, #222);
+    background: linear-gradient(top, #333, #222);
+    font: normal 13px/40px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    direction: ltr;
+}
+
+#zend-developer-toolbar a {
+    color: #80dc09;
+    text-decoration: none;
+}
+
+#zend-developer-toolbar a:hover {
+    text-decoration: underline;
+}
+
+.zdt-toolbar-bold {
+    font-weight: bold;
+}
+
+.zdt-toolbar-entry,
+.zdt-toolbar-detail {
+    float: left;
+    display: block;
+    padding: 0 8px;
+    background: transparent;
+}
+
+.zdt-toolbar-info {
+    vertical-align: middle;
+}
+
+.zdt-toolbar-info abbr {
+    border: 0;
+    font-size: 100%;
+    cursor: pointer;
+    text-transform: none;
+}
+
+.zdt-toolbar-detail .zdt-toolbar-info {
+    clear: both;
+    display: block;
+    max-width: 300px;
+    white-space: normal;
+}
+
+.zdt-toolbar-detail .zdt-toolbar-info-heading {
+    color: #80dc09;
+    font-weight: bold;
+}
+
+.zdt-toolbar-detail .zdt-toolbar-info-heading:before {
+    content: '» ';
+}
+
+.zdt-toolbar-info .zdt-toolbar-spacing {
+    padding: 0;
+    margin-right: 7px;
+}
+
+.zdt-toolbar-detail .zdt-toolbar-spacing {
+    padding-bottom: 15px;
+}
+
+.zdt-toolbar-detail .zdt-toolbar-topspacing {
+    padding-top: 15px;
+}
+
+.zdt-toolbar-detail {
+    bottom: 40px;
+    display: none;
+    line-height: 20px;
+    padding: 7px 10px;
+    position: absolute;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.zdt-toolbar-detail:before,
+.zdt-toolbar-detail:after {
+    content: '';
+    width: 0;
+    height: 0;
+    left: 14px;
+    bottom: -10px;
+    position: absolute;
+    border-top: 10px solid #68B604;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+
+.zdt-toolbar-detail-redundant {
+    display: none;
+    opacity: 0;
+}
+
+.zdt-toolbar-detail .zdt-toolbar-info-redundant,
+.zdt-toolbar-detail .zdt-toolbar-extra-info-redundant {
+    display: none;
+}
+
+.zdt-toolbar-preview img {
+    border: 0;
+    width: auto;
+    display: inline;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.zdt-toolbar-entry:hover .zdt-toolbar-detail {
+    display: block;
+    background: #333;
+    box-shadow: rgba(0, 0, 0, 0.75) 0 0 7px;
+}
+
+.zdt-toolbar-info .zdt-detail-label {
+    float: left;
+    display: block;
+    text-align: left;
+    min-width: 100px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.zdt-toolbar-info .zdt-detail-label:after {
+    content: ':';
+}
+
+.zdt-toolbar-info .zdt-detail-value {
+    float: left;
+    display: block;
+    white-space: nowrap;
+}
+
+.zdt-toolbar-info .zdt-detail-pre {
+    display: block;
+    font-family: monospace;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    line-height: 15px;
+    max-height: 400px;
+    unicode-bidi: embed;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.zdt-toolbar-info .zdt-detail-extra-value {
+    margin-left: 100px;
+}
+
+.zdt-toolbar-info .zdt-detail-value-right {
+    float: right;
+}
+
+.zdt-toolbar-info .zdt-toolbar-status {
+    color: #fff;
+    padding: 0 3px;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.zdt-toolbar-status-green {
+    background: #558f0b;
+}
+
+.zdt-toolbar-status-red {
+    background: #8f2727;
+}
+
+.zdt-toolbar-color-green {
+    color: #80dc09;
+}
+
+.zdt-toolbar-color-red {
+    color: #e83535;
+}
+
+.zdt-toolbar-color-yellow {
+    color: #d9cd0f;
+}
+
+.zdt-toolbar-color-grey {
+    color: #9d9d9d;
+}
+
+#zend-developer-toolbar .zdf-toolbar-hide-button {
+    top: 0;
+    right: 8px;
+    color: #bebebe;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    text-decoration: none;
+}
+
+#zend-developer-toolbar .zdf-toolbar-hide-button:hover {
+    color: #eb4a4a;
+    text-decoration: none;
+}
+
+#zend-developer-toolbar .zdt-toolbar-entry .zdt-toolbar-detail,
+#zend-developer-toolbar .zdt-toolbar-entry .zdt-toolbar-info {
+    font-size: 11px;
+    max-width: 700px;
+}
+
+#zend-developer-toolbar .zdt-toolbar-info .zdt-detail-value pre {
+    max-height: 350px;
+    max-width: 650px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    display: inline-block;
+    white-space: pre;
+    word-break: keep-all;
+    word-wrap: normal;
+}
+
+@media screen and (max-width: 780px) {
+    .zdt-toolbar-preview .zdt-toolbar-extra-info {
+        display: none;
+    }
+
+    .zdt-toolbar-entry:hover .zdt-toolbar-extra-info-redundant {
+        display: block;
+    }
+
+    .zdt-toolbar-preview .zdt-toolbar-spacing {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .zdt-toolbar-preview .zdt-toolbar-info {
+        display: none;
+    }
+
+    .zdt-toolbar-entry:hover .zdt-toolbar-detail-redundant {
+        display: block;
+        opacity: 1;
+    }
+
+    .zdt-toolbar-entry:hover .zdt-toolbar-info-redundant {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .zdt-toolbar-preview img {
+        margin: 0;
+    }
+}
+
+@media print {
+    #zend-developer-toolbar{
+        display: none;
+    }
+}
+
+</style>
+<!-- END Zend Developer Toolbar Style -->
+
+<script src="Apiculture_fichiers/commonmaputilmarker.js" charset="UTF-8" type="text/javascript"></script><script src="Apiculture_fichiers/onion.js" charset="UTF-8" type="text/javascript"></script><script src="Apiculture_fichiers/controlsstats.js" charset="UTF-8" type="text/javascript"></script></head>
+    <body class="">
+        
+        <header>
+        <nav class="navbar-inverse " role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="http://apiculture/"><h1>Apiculture Application</h1></a>
+                </div>
+                <!--<div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav pull-right">-->
+                        <div class="active navbar-btn navbar-text pull-right">Pas encore inscrit ? <a class="btn btn-primary navbar-btn " href="http://apiculture/user/register">Enregistrez-vous</a></div>
+
+                   <!-- </ul>
+                </div><!--/.nav-collapse -->
+            <!--</div>-->
+        </div></nav>
+        </header>
+        <div class="container">
+            <h1>Bienvenue baziuk.vincent@gmail.com</h1>
+<a href="http://apiculture/add">Ajouter une ruche</a>
+<div id="list-hives">
+    <h2>Liste de vos rûches</h2>
+    <ul>
+        <li id="21">aa</li>                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="delete">
+                    Supprimer
+                </button>
+            <li id="25">vivi</li>                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="delete">
+                    Supprimer
+                </button>
+            <li id="26">testest</li>                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="delete">
+                    Supprimer
+                </button>
+            <li id="27">youhou</li>                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="delete">
+                    Supprimer
+                </button>
+            <li id="28">la ruche 90</li>                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="delete">
+                    Supprimer
+                </button>
+            <li id="29">la reruche90</li>                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="delete">
+                    Supprimer
+                </button>
+            <li id="30">youhouuuuué</li>                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="delete">
+                    Supprimer
+                </button>
+                </ul>
+</div>
+<div id="map">
+    <div id="map_canvas" style="width: 600px; height: 400px; position: relative; background-color: rgb(229, 227, 223); overflow: hidden;"><div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; z-index: 200;"><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div></div><div style="position: absolute; left: 0px; top: 0px; width: 100%; z-index: 201;"><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 27px; top: 17px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 283px; top: 17px;"><canvas width="280" height="280" style="-moz-user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;" draggable="false"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 27px; top: -239px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 27px; top: 273px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 283px; top: -239px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 283px; top: 273px;"><canvas width="280" height="280" style="-moz-user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;" draggable="false"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -229px; top: 17px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 539px; top: 17px;"><canvas width="280" height="280" style="-moz-user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;" draggable="false"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -229px; top: -239px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -229px; top: 273px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 539px; top: -239px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 539px; top: 273px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; width: 100%; z-index: 202;"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; position: absolute; left: 27px; top: 17px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 283px; top: 17px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 27px; top: -239px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 27px; top: 273px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 283px; top: -239px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 283px; top: 273px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -229px; top: 17px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 539px; top: 17px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -229px; top: -239px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -229px; top: 273px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 539px; top: -239px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 539px; top: 273px;"></div></div></div></div><div style="position: absolute; z-index: 0; left: 0px; top: 0px;"><div style="overflow: hidden; width: 600px; height: 400px;"><img src="Apiculture_fichiers/StaticMapService.png" style="width: 600px; height: 400px;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; position: absolute; left: 27px; top: -239px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_006.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 27px; top: 17px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_008.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 283px; top: 17px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_003.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 27px; top: 273px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_012.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 539px; top: -239px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 283px; top: -239px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_005.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 539px; top: 17px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_010.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -229px; top: 17px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_007.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -229px; top: 273px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_002.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 283px; top: 273px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_009.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 539px; top: 273px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_011.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -229px; top: -239px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img draggable="false" src="Apiculture_fichiers/vt_004.png" style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div></div></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a title="Click to see this area on Google Maps" href="http://maps.google.com/maps?ll=50,3&amp;z=3&amp;t=m&amp;hl=en&amp;mapclient=apiv3" target="_blank" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 62px; height: 26px; cursor: pointer;"><img draggable="false" src="Apiculture_fichiers/google_white2_hdpi.png" style="position: absolute; left: 0px; top: 0px; width: 62px; height: 26px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div></a></div><div style="z-index: 1000001; position: absolute; right: 168px; bottom: 0px; width: 154px;" class="gmnoprint"><div class="gm-style-cc" style="-moz-user-select: none;" draggable="false"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer; display: none;">Map Data</a><span style="">Map data ©2013 Google, INEGI</span></div></div></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto,Arial,sans-serif; color: rgb(34, 34, 34); box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2); z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 150px; top: 110px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2013 Google, INEGI</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img draggable="false" src="Apiculture_fichiers/mapcnt3.png" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div></div><div style="position: absolute; right: 0px; bottom: 0px;" class="gmnoscreen"><div style="font-family: Roboto,Arial,sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2013 Google, INEGI</div></div><div draggable="false" style="z-index: 1000001; position: absolute; -moz-user-select: none; right: 96px; bottom: 0px;" class="gmnoprint gm-style-cc"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a target="_blank" href="http://www.google.com/intl/en_US/help/terms_maps.html" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><div class="gm-style-cc" style="-moz-user-select: none; position: absolute; right: 0px; bottom: 0px;" draggable="false"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a href="http://maps.google.com/maps?ll=50,3&amp;z=3&amp;t=m&amp;hl=en&amp;mapclient=apiv3&amp;skstate=action:mps_dialog$apiref:1&amp;output=classic" style="font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;" title="Report errors in the road map or imagery to Google" target="_new">Report a map error</a></div></div><div controlheight="356" controlwidth="78" draggable="false" style="margin: 5px; -moz-user-select: none; position: absolute; left: 0px; top: 0px;" class="gmnoprint"><div style="cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; width: 78px; height: 78px; position: absolute; left: 0px; top: 0px;" controlheight="80" controlwidth="78" class="gmnoprint"><div style="width: 78px; height: 78px; position: absolute; left: 0px; top: 0px;" controlheight="80" controlwidth="78" class="gmnoprint"><div style="visibility: hidden;"><svg viewBox="0 0 78 78" height="78px" width="78px" overflow="hidden" version="1.1" style="position: absolute; left: 0px; top: 0px;"><circle stroke="#f2f4f6" fill="#f2f4f6" fill-opacity="0.2" stroke-width="3" r="35" cy="39" cx="39"></circle><g transform="rotate(0 39 39)"><rect fill="#f2f4f6" stroke-width="1" stroke="#a6a6a6" height="11" width="12" ry="4" rx="4" y="0" x="33"></rect><polyline stroke="#000" fill="#f2f4f6" stroke-width="1.5" stroke-linejoin="bevel" points="36.5,8.5 36.5,2.5 41.5,8.5 41.5,2.5"></polyline></g></svg></div></div><div style="position: absolute; left: 10px; top: 11px;" controlheight="59" controlwidth="59" class="gmnoprint"><div style="width: 59px; height: 59px; overflow: hidden; position: relative;"><img draggable="false" src="Apiculture_fichiers/mapcnt3_hdpi.png" style="position: absolute; left: 0px; top: 0px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"><div title="Pan left" style="position: absolute; left: 0px; top: 20px; width: 19.6667px; height: 19.6667px; cursor: pointer;"></div><div title="Pan right" style="position: absolute; left: 39px; top: 20px; width: 19.6667px; height: 19.6667px; cursor: pointer;"></div><div title="Pan up" style="position: absolute; left: 20px; top: 0px; width: 19.6667px; height: 19.6667px; cursor: pointer;"></div><div title="Pan down" style="position: absolute; left: 20px; top: 39px; width: 19.6667px; height: 19.6667px; cursor: pointer;"></div></div></div></div><div controlheight="40" controlwidth="32" style="cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; position: absolute; left: 23px; top: 85px;"><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px;"><img draggable="false" src="Apiculture_fichiers/cb_scout2_hdpi.png" style="position: absolute; left: -9px; top: -102px; width: 1028px; height: 214px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img draggable="false" src="Apiculture_fichiers/cb_scout2_hdpi.png" style="position: absolute; left: -107px; top: -102px; width: 1028px; height: 214px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img draggable="false" src="Apiculture_fichiers/cb_scout2_hdpi.png" style="position: absolute; left: -58px; top: -102px; width: 1028px; height: 214px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img draggable="false" src="Apiculture_fichiers/cb_scout2_hdpi.png" style="position: absolute; left: -205px; top: -102px; width: 1028px; height: 214px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div></div><div controlheight="0" controlwidth="0" style="opacity: 0.6; display: none; position: absolute;" class="gmnoprint"><div title="Rotate map 90 degrees" style="width: 22px; height: 22px; overflow: hidden; position: absolute; cursor: pointer;"><img draggable="false" src="Apiculture_fichiers/mapcnt3_hdpi.png" style="position: absolute; left: -38px; top: -360px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div></div><div controlheight="226" controlwidth="25" style="position: absolute; left: 27px; top: 130px;" class="gmnoprint"><div title="Zoom in" style="width: 23px; height: 24px; overflow: hidden; position: relative; cursor: pointer; z-index: 1;"><img draggable="false" src="Apiculture_fichiers/mapcnt3_hdpi.png" style="position: absolute; left: -17px; top: -400px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div title="Click to zoom" style="width: 25px; height: 178px; overflow: hidden; position: relative; cursor: pointer; top: -4px;"><img draggable="false" src="Apiculture_fichiers/mapcnt3_hdpi.png" style="position: absolute; left: -17px; top: -87px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div title="Drag to zoom" style="width: 21px; height: 14px; overflow: hidden; position: absolute; transition: top 0.25s ease 0s; z-index: 2; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; left: 2px; top: 164px;"><img draggable="false" src="Apiculture_fichiers/mapcnt3_hdpi.png" style="position: absolute; left: 0px; top: -384px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div title="Zoom out" style="width: 23px; height: 23px; overflow: hidden; position: relative; cursor: pointer; top: -4px; z-index: 3;"><img draggable="false" src="Apiculture_fichiers/mapcnt3_hdpi.png" style="position: absolute; left: -17px; top: -361px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div></div></div><div style="margin: 5px; z-index: 0; position: absolute; cursor: pointer; right: 0px; top: 0px;" class="gmnoprint"><div class="gm-style-mtc" style="float: left;"><div title="Show street map" draggable="false" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 1px 6px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.15); box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); min-width: 23px; font-weight: 500;">Map</div><div style="background-color: white; z-index: -1; padding-top: 2px; background-clip: padding-box; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); position: absolute; left: 0px; top: 20px; text-align: left; display: none;"><div title="Show street map with terrain" draggable="false" style="color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 3px 8px 3px 5px; direction: ltr; text-align: left; white-space: nowrap;"><span style="position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;" role="checkbox"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img draggable="false" src="Apiculture_fichiers/imgs8.png" style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Terrain</label></div></div></div><div class="gm-style-mtc" style="float: left;"><div title="Show satellite imagery" draggable="false" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 1px 6px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-clip: padding-box; border-width: 1px 1px 1px 0px; border-style: solid solid solid none; border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); min-width: 40px;">Satellite</div><div style="background-color: white; z-index: -1; padding-top: 2px; background-clip: padding-box; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); position: absolute; right: 0px; top: 20px; text-align: left; display: none;"><div title="Zoom in to show 45 degree view" draggable="false" style="color: rgb(184, 184, 184); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 3px 8px 3px 5px; direction: ltr; text-align: left; white-space: nowrap; display: none;"><span style="position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(241, 241, 241); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;" role="checkbox"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img draggable="false" src="Apiculture_fichiers/imgs8.png" style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">45°</label></div><div title="Show imagery with street names" draggable="false" style="color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 3px 8px 3px 5px; direction: ltr; text-align: left; white-space: nowrap;"><span style="position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;" role="checkbox"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img draggable="false" src="Apiculture_fichiers/imgs8.png" style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Labels</label></div></div></div></div></div></div>
+<style type="text/css">
+#map_canvas{
+width:600px;
+height:400px;
+}
+</style>
+<script type="text/javascript">
+function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+</script>
+<script type="text/javascript" src="Apiculture_fichiers/jsapi.js"></script><script src="Apiculture_fichiers/js.js" type="text/javascript"></script><script src="Apiculture_fichiers/main.js" type="text/javascript"></script>
+<script type="text/javascript">
+map_52b4edc4b3d14539677542_container = {"map":null,"coordinates":{},"bounds":{},"points":{},"sizes":{},"circles":{},"encoded_polylines":{},"ground_overlays":{},"polygons":{},"polylines":{},"rectangles":{},"info_windows":{},"marker_images":{},"marker_shapes":{},"markers":{},"marker_cluster":null,"kml_layers":{},"event_manager":{"dom_events":{},"dom_events_once":{},"events":{},"events_once":{}},"closable_info_windows":{},"functions":{"to_array":function (object) { var array = []; for (var key in object) { array.push(object[key]); } return array; }}};
+map_52b4edc4b3d14539677542_container.coordinates.coordinate_52b4edc4b3dcf976238735 = coordinate_52b4edc4b3dcf976238735 = new google.maps.LatLng(50, 3, true);
+map_52b4edc4b3d14539677542_container.coordinates.coordinate_52b4edc4b6bb5143505348 = coordinate_52b4edc4b6bb5143505348 = new google.maps.LatLng(12, 12, true);
+map_52b4edc4b3d14539677542_container.coordinates.coordinate_52b4edc4b6c24944197851 = coordinate_52b4edc4b6c24944197851 = new google.maps.LatLng(45, 34, true);
+map_52b4edc4b3d14539677542_container.coordinates.coordinate_52b4edc4b6c80312330322 = coordinate_52b4edc4b6c80312330322 = new google.maps.LatLng(3, 32, true);
+map_52b4edc4b3d14539677542_container.coordinates.coordinate_52b4edc4b6cdb530336461 = coordinate_52b4edc4b6cdb530336461 = new google.maps.LatLng(21, 43, true);
+map_52b4edc4b3d14539677542_container.coordinates.coordinate_52b4edc4b6d35566287075 = coordinate_52b4edc4b6d35566287075 = new google.maps.LatLng(90, 90, true);
+map_52b4edc4b3d14539677542_container.coordinates.coordinate_52b4edc4b6d8f886508095 = coordinate_52b4edc4b6d8f886508095 = new google.maps.LatLng(45, 45, true);
+map_52b4edc4b3d14539677542_container.coordinates.coordinate_52b4edc4b6de8935152383 = coordinate_52b4edc4b6de8935152383 = new google.maps.LatLng(43, 34, true);
+map_52b4edc4b3d14539677542_container.map = map_52b4edc4b3d14539677542 = new google.maps.Map(document.getElementById("map_canvas"), {"mapTypeId":google.maps.MapTypeId.ROADMAP,"zoom":3});
+map_52b4edc4b3d14539677542.setCenter(coordinate_52b4edc4b3dcf976238735);
+map_52b4edc4b3d14539677542_container.markers.marker_52b4edc4b6ba6315888806 = marker_52b4edc4b6ba6315888806 = new google.maps.Marker({"position":coordinate_52b4edc4b6bb5143505348,"map":map_52b4edc4b3d14539677542});
+map_52b4edc4b3d14539677542_container.markers.marker_52b4edc4b6c17222535369 = marker_52b4edc4b6c17222535369 = new google.maps.Marker({"position":coordinate_52b4edc4b6c24944197851,"map":map_52b4edc4b3d14539677542});
+map_52b4edc4b3d14539677542_container.markers.marker_52b4edc4b6c73235596079 = marker_52b4edc4b6c73235596079 = new google.maps.Marker({"position":coordinate_52b4edc4b6c80312330322,"map":map_52b4edc4b3d14539677542});
+map_52b4edc4b3d14539677542_container.markers.marker_52b4edc4b6ccf312582425 = marker_52b4edc4b6ccf312582425 = new google.maps.Marker({"position":coordinate_52b4edc4b6cdb530336461,"map":map_52b4edc4b3d14539677542});
+map_52b4edc4b3d14539677542_container.markers.marker_52b4edc4b6d29972244027 = marker_52b4edc4b6d29972244027 = new google.maps.Marker({"position":coordinate_52b4edc4b6d35566287075,"map":map_52b4edc4b3d14539677542});
+map_52b4edc4b3d14539677542_container.markers.marker_52b4edc4b6d82370084049 = marker_52b4edc4b6d82370084049 = new google.maps.Marker({"position":coordinate_52b4edc4b6d8f886508095,"map":map_52b4edc4b3d14539677542});
+map_52b4edc4b3d14539677542_container.markers.marker_52b4edc4b6ddb043707191 = marker_52b4edc4b6ddb043707191 = new google.maps.Marker({"position":coordinate_52b4edc4b6de8935152383,"map":map_52b4edc4b3d14539677542});
+</script>
+</div>
+
+<!-- Modal -->
+<div style="display: none;" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">Suppression de ruche</h4>
+      </div>
+      <div class="modal-body">
+        Souhaitez-vous définitivement supprimer cette ruche ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Oui</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+    $( "#delete" ).click(function() {
+        alert($('li').attr('id'));
+        
+        
+});
+</script>        </div>
+            <hr>
+            <footer>
+                <p>© 2005 - 2013 by Zend Technologies Ltd. All rights reserved.</p>
+            </footer>
+                   <!-- START Zend Developer Toolbar -->
+<div id="zend-developer-toolbar">
+    <div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAPCAYAAAAceBSiAAAAAXNSR0IArs4c6QAAAAZiS0dEAH8A9wAAMkqpNAAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB9wCCwIWGuaXOlYAAAJiSURBVDjLldS/i1xVFAfwz8leJxF/FdFUNjayhYpCkBATxEIwb0D/ADFpIjMgCDGQQtBCIWVAY/EmIGKbRpt9q6CFplIL8UfvL2SLqBBRUHzDsdi3O7Ozb7KbA493udz7Pff7Pd9zYtyUkumrCI/YfxzARvJgcDeeT54Mbs/cP0iBCNEB7i/SNMNxPIBPcCRu4eURMwaS2DNd908Ir0yq9sfgTRxZBN7jyw7xh4KpdA73LGaL8Lf0MoZia8tnddW+PVorgWdvQa0tipFsYHhTxqO18miEr3N29Y9J1R6GcVMCr+PfbfhZgl1Kd/9ppm8nw/ZjbiL3aK0U4TtptZMqUNVVu754drxWHhKOZjoYsYvwivTBZNhu9BpuSVzGagcWeK8v8agpDU7NG6nHYNdsSt0rxyLr0xHen6vUF3XVHtvFuClv4LUdFd0dv9ZVe/+4KSdxEY/hF5wvPYnvjXAps2OS/slwtudcZHphrlX7uyM9060v4Wi3XsWV0iPFhzgcIaXo2ur7Jb16Q/qyx9it9DMuT4bbd1/FIfyEb7ASC2zeifBSpuzYvFtX7dmlpmzKwKZC/9VVm/NmjTCd35sr1Sk0OBdzQI8H13BbpojwZ2ek6zmTcUud63XV3uic/pRwAceSg8Gh5L5J1f7ek/g41nG1rtoXS5d4Jfg0GUSHntwhNRELTtp8yQVcGTflOVyVBjk79NuSxA/jI3yOEZRuUq3jztgebGBF7Jx6He2MNOgecl4YzE0/OLOkSm/hLgwxHTfFgeB08PQe7bLTxrHpdpzoBn5E+gtn6qptllx9YnHjf9NI2tXkjbmCAAAAAElFTkSuQmCC%0A" alt="Zend Framework 2">
+        <span class="zdt-toolbar-info zdt-toolbar-bold">
+            2.2.5        </span>
+        <div class="zdt-toolbar-detail">
+                        <span class="zdt-toolbar-info">
+                <a href="http://framework.zend.com/manual/2.2/en/index.html">Documentation</a>
+            </span>
+            <span class="zdt-toolbar-info zdt-toolbar-spacing">
+                <a href="http://modules.zendframework.com/">Modules Gallery</a>
+            </span>
+            <span class="zdt-toolbar-info zdt-toolbar-info-redundant">
+                <span class="zdt-detail-label">Version</span>
+                <span class="zdt-detail-value">2.2.5</span>
+            </span>
+            <span class="zdt-toolbar-info">
+                <span class="zdt-detail-label">PHP Version</span>
+                <span class="zdt-detail-value">5.3.26</span>
+            </span>
+            <span class="zdt-toolbar-info">
+                <span class="zdt-detail-label">Extensions</span>
+                <span class="zdt-detail-value">
+                    <span class="zdt-toolbar-status zdt-toolbar-status-red" title="intl extension disabled">intl</span>
+                </span>
+            </span>
+                            <span class="zdt-toolbar-info">
+                    <span class="zdt-toolbar-info"><span class="zdt-detail-label">Modules</span><span class="zdt-detail-value">Application</span></span><span class="zdt-toolbar-info"><span class="zdt-detail-value zdt-detail-extra-value">ZendDeveloperTools</span></span><span class="zdt-toolbar-info"><span class="zdt-detail-value zdt-detail-extra-value">DoctrineModule</span></span><span class="zdt-toolbar-info"><span class="zdt-detail-value zdt-detail-extra-value">DoctrineORMModule</span></span><span class="zdt-toolbar-info"><span class="zdt-detail-value zdt-detail-extra-value">ZfcBase</span></span><span class="zdt-toolbar-info"><span class="zdt-detail-value zdt-detail-extra-value">ZfcUser</span></span><span class="zdt-toolbar-info"><span class="zdt-detail-value zdt-detail-extra-value">ZfcUserDoctrineORM</span></span><span class="zdt-toolbar-info"><span class="zdt-detail-value zdt-detail-extra-value">BjyAuthorize</span></span><span class="zdt-toolbar-info"><span class="zdt-detail-value zdt-detail-extra-value">Apiculture</span></span>                </span>
+                    </div>
+    </div>
+</div>
+<div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAA0JJREFUOMudVEFoI1UY/t4kk2yUylZlFNuaDduw2A2IiCD0WgQPqVUsewgt6kXQXEpPnoqnii3tJeAacVdahNLSiyClttCSgdimCZWCuOykk5mNEtYsNGYmTCaZ934vWai4ibXf6f3vfXx8//++9xi6QNO0d0Oh0LoQouW67s1oNGrgApDOF4ZhfGea5hQAnJ2dRTjnPtd1n2o0Gi8BgGmaXxiG8WUvQfZ4USqV7vp8vg+EEGCMnTLGrneOCAAjIgPANQAQQnwSiUS+6uqwv79fSqVST3POCQCI6HogEIBt2+S6LvP5fCCia0QEy7L48vLyMxdp/4qqqm3DMEjXdZFMJu8DSEuStLqwsPDANE0yTZN2d3dNAL6eSsVi8X1N05K6rlO5XKbZ2dmfAQyco9xcXFy8XyqVSNd1R9O0j4rF4uSTtPydmawRESMiVKtVpFKpWwD+OMf7tVKpfFqv138KhUJBAN8QEQHYeKKgZVlMlmUWCAQgyzKazebvjLF/EKempiqSJEEIwZrNJjjn6OpwYmLie0VRXlhbW3srGAwin89/C+DD80TO+bIsy3Acx0skEj82Gg2rZ2wAYHt7mw8ODkpEBCL6mohuA5AZY58DeFuSJOi6Xo7H4y//Zw5PTk6WOOczjDF0WgOAdudGpcd7RNSWZfnjWCx2t9dLkVRVDQshUKvV2rlc7qFt24Jz7uecs1qtxo+Ojv50HIc3m03f1tbWiwBQKBQCvdITmZyc/CUej98G8NrMzMydg4MDoaoqjY2NfQbg9enp6d3x8fEdAFcBIJfL3Ts+Ppa6zhDAFQAyAGtlZWU6HA7fcV0X1Wr1lUQioQF4fmNj4+rAwEBGkqQMY+wWEW0KId4kondGR0cLrJvdoaGhG4yx9wB4RJQul8t/AUA0Gn1uaWnpkaIoOD09dSORSLBer2Nzc3MknU7/hv+LTCZD2WyW5ufnKwCSc3NzejabpUwm4/3r+7oIdnZ2XNu2xfDwsENEP8RisbrjOLS/v29dStC27Tc8z2OKokT29vbuKYryqud58Pv9E5cSbLVarXw+/2h1dTXX19cXWl9fLxweHj6s1WptXBJ+ADcAPDsyMmIwxsKdOggAfwOpZLGNo7pH7AAAAABJRU5ErkJggg==" alt="Request and Response">
+        <span class="zdt-toolbar-info">
+            <span class="zdt-toolbar-bold zdt-toolbar-color-green zdt-toolbar-spacing">
+                200 </span>
+            <span class="zdt-toolbar-extra-info">
+                <abbr title="Apiculture\Controller\Apiculture::index">
+                    Apiculture::index                </abbr> <span class="zdt-toolbar-color-grey">on</span> connected            </span>
+        </span>
+    </div>
+    <div class="zdt-toolbar-detail">
+        <span class="zdt-toolbar-info zdt-toolbar-info-redundant">
+            <span class="zdt-detail-label">Status code</span>
+            <span class="zdt-detail-value zdt-toolbar-bold zdt-toolbar-color-green">
+                200            </span>
+        </span>
+        <span class="zdt-toolbar-info">
+            <span class="zdt-detail-label">Method</span>
+            <span class="zdt-detail-value">
+                GET            </span>
+        </span>
+        <span class="zdt-toolbar-info zdt-toolbar-extra-info-redundant">
+            <span class="zdt-detail-label">Controller</span>
+            <span class="zdt-detail-value">Apiculture\Controller\Apiculture</span>
+        </span>
+        <span class="zdt-toolbar-info zdt-toolbar-extra-info-redundant">
+            <span class="zdt-detail-label">Action</span>
+            <span class="zdt-detail-value">index</span>
+        </span>
+        <span class="zdt-toolbar-info zdt-toolbar-extra-info-redundant">
+            <span class="zdt-detail-label">Route</span>
+            <span class="zdt-detail-value">connected</span>
+        </span>
+        <span class="zdt-toolbar-info"><span class="zdt-detail-label">Templates</span><span class="zdt-detail-value">layout/layout</span></span><span class="zdt-toolbar-info"><span class="zdt-detail-value zdt-detail-extra-value">apiculture/apiculture/index</span></span>    </div>
+</div><div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wHAw8mGjxdOGkAAANISURBVDjLrZRRSCxlFMf/3+es7ujAZdkWRFtMepAUXVehEIILETei+1iy9iBURMF9iB6u9JJEBWbZS6F4k7wXe0vYLNhIwau5O4MSDKIj68LorkzhthItspvbznxzerhe2J27ZA99b3P+5//jO985cxiuOKenp44QgnPOWUdHB7sqn1+VMDMzU2htbWXxeBz/27Esi1ZXV2/+l9yGJWSz2ccZY68xxt5kjIUZYwSAEVHJdd1viGhOCHHIOX+Hcz7e1NR0PRwOFxsCTdN8i3P+kc/nC+VyOVfTtCIAOI5DkUhE6e/vbyEi23XdH4QQT8uyHC6Xy1s9PT3X0QB2yzRNymQy7tjY2IEkSZ/KsjwCIAIg2tbWdntwcDCVTCYvTNOkk5MTmpqaOu3s7Jx/BGYYxjOZTIa2t7dFb2/vPQBPPNSOjo7IsqyXLj+bfT7fZCKRKGezWVpcXPyq4WMeHBxkdV2n8fHxOwDkWi2dTlM6nX6xNtbd3f1GIpFwDw8PqVAoPFY3Npubm68A6LAs62hpaelDABe1ZiICEXkbd09V1buO48AwjE/qgLIsDwBoTiaT9wH8Vmvc399XhBAQQrR5ihLVavXb8/PzvxVFuVEH9Pv9khACZ2dnP3qfQghx/xI459WOj4+PGWN/trS0+B/GpMuRAOccwWDwwmtyHGeQcw7XdUNeLRgM2gBcx3F43Q0rlQo5joP29vaA1zQ6OnpHURQsLCz87NW6urpkIpIqlYpbB9zd3S1Vq1VEIpFYg7LenZ6edovF4pRXGx4efopzHjIM4486YWho6Mb6+vpfmqYVVFXtazBV/QDqmqKqarOmaT/t7OzQwMDAe3U31HV9LR6P/8IYC9m2/UUqlbrmAe4DKNcGbNv+mIheWFtb+31vb++zR9bX7Ozs6ysrK0W/3/+cbdva1tbWUKMfIJVKKRsbG99zzm+bpimWl5ffBiAabhtFUW5OTEx8PTIyEpIkiQHYIKI5AASgyhh7GcCrRCTl8/ny5OTkl6Zpvg/A+bf19XwsFvsgGo1G+/r6WgOBB41njKFUKiGXy1V1Xc/Nz89/DuAuAPvKfQjgWiAQeFZRlBhj7MkHPMZc183btr2ez+e/A/BrI+M/BMaRHvzJD8cAAAAASUVORK5CYII=" alt="Execution Time">
+        <span class="zdt-toolbar-info">
+            239.73 ms        </span>
+    </div>
+    <div class="zdt-toolbar-detail zdt-toolbar-detail-redundant">
+                <span class="zdt-toolbar-info zdt-toolbar-info-redundant">
+            <span class="zdt-detail-label">Total Time</span>
+            <span class="zdt-detail-value zdt-detail-value-right">
+                239.73 ms            </span>
+        </span>
+    </div>
+</div><div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wHAw8kLbbW/+QAAAHwSURBVDjLnVTPq1JBFD7nznivgbcoJQliMnGZK0HbRNhKgsCdC2lh7dy58A/I/gHBv+QhBO8tXnvJlbUIxHIEKXKjoGnjzLR518Z7Nd+732p+fnO+850zCAZms9lTIcQFALhwGgoR3yWTyfeIqL1FBADgnCNjTDcajY9CCAYA4hqESCldt9vtZ5zzBWPsH+EV6ZfFYvFYKUXgmkBE7bouSaVSEW+N7uJXKhGLxW4Zh8GyrACJ1hqUUtoMxoRJuLcxnU7/dDqd74SQPfmFQuFhuVy+I6U8HLU3GA6HPwHgvjeXUl4ul8uhbdtvtN7lXK5Wq1fxePzCJMlkMhggHI1GvwAgASGQTqcxILlerw8A4F4IvtsHJQ8Ggx+m5BsAs9lsMMIrcjRdjkQiYORvZ56U8rTLftcmk8mm1Wp9tSxLmI8Ui8VH1Wo1sd1u/+9yv9/fcxkRLwkh35RSb43zkhDyUghxbpLkcrmgZEqpv0NeAIC/uInW+pxSejShu51KpfIJAO6GMMU9KLnX64Wuw3w+H5S82WyUr/HBtu3AZSklCCE0It6sl8fj8e9ms/mZUrpnZ6lUStVqtQfHevlo2TDGet1ulwshXpufTTQaLc/n87OTpjiO47fuuRCBfxbX6/WZ4zjH28aI6ENYlznnT7zJX1iYwsqME23RAAAAAElFTkSuQmCCSUVORK5CYII=" alt="Memory Peak">
+        <span class="zdt-toolbar-info">
+            27.75 Mb        </span>
+    </div>
+    <div class="zdt-toolbar-detail zdt-toolbar-detail-redundant">
+                <span class="zdt-toolbar-info zdt-toolbar-info-redundant">
+            <span class="zdt-detail-label">Memory Peak</span>
+            <span class="zdt-detail-value zdt-detail-value-right">
+                27.75 Mb            </span>
+        </span>
+    </div>
+</div><div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/png;base64,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" alt="Config">
+        <span class="zdt-toolbar-info">Config</span>
+    </div>
+    <div class="zdt-toolbar-detail">
+        <span class="zdt-toolbar-info zdt-toolbar-info-redundant">
+            <span class="zdt-detail-label">Merged Config (<code>Config</code>)</span>
+        </span>
+        <span class="zdt-toolbar-info">
+            <span class="zdt-detail-pre">
+<pre>array(10) {
+  ["router"] =&gt; array(1) {
+    ["routes"] =&gt; array(7) {
+      ["home"] =&gt; array(2) {
+        ["type"] =&gt; string(28) "Zend\Mvc\Router\Http\Literal"
+        ["options"] =&gt; array(2) {
+          ["route"] =&gt; string(1) "/"
+          ["defaults"] =&gt; array(2) {
+            ["controller"] =&gt; string(28) "Application\Controller\Index"
+            ["action"] =&gt; string(5) "index"
+          }
+        }
+      }
+      ["connected"] =&gt; array(2) {
+        ["type"] =&gt; string(28) "Zend\Mvc\Router\Http\Literal"
+        ["options"] =&gt; array(2) {
+          ["route"] =&gt; string(10) "/connected"
+          ["defaults"] =&gt; array(2) {
+            ["controller"] =&gt; string(32) "Apiculture\Controller\Apiculture"
+            ["action"] =&gt; string(5) "index"
+          }
+        }
+      }
+      ["delete"] =&gt; array(2) {
+        ["type"] =&gt; string(28) "Zend\Mvc\Router\Http\Literal"
+        ["options"] =&gt; array(2) {
+          ["route"] =&gt; string(7) "/delete"
+          ["defaults"] =&gt; array(2) {
+            ["controller"] =&gt; string(32) "Apiculture\Controller\Apiculture"
+            ["action"] =&gt; string(10) "deletehive"
+          }
+        }
+      }
+      ["add"] =&gt; array(2) {
+        ["type"] =&gt; string(28) "Zend\Mvc\Router\Http\Literal"
+        ["options"] =&gt; array(2) {
+          ["route"] =&gt; string(4) "/add"
+          ["defaults"] =&gt; array(2) {
+            ["controller"] =&gt; string(32) "Apiculture\Controller\Apiculture"
+            ["action"] =&gt; string(7) "addhive"
+          }
+        }
+      }
+      ["application"] =&gt; array(4) {
+        ["type"] =&gt; string(7) "Literal"
+        ["options"] =&gt; array(2) {
+          ["route"] =&gt; string(12) "/application"
+          ["defaults"] =&gt; array(3) {
+            ["__NAMESPACE__"] =&gt; string(22) "Application\Controller"
+            ["controller"] =&gt; string(5) "Index"
+            ["action"] =&gt; string(5) "index"
+          }
+        }
+        ["may_terminate"] =&gt; bool(true)
+        ["child_routes"] =&gt; array(1) {
+          ["default"] =&gt; array(2) {
+            ["type"] =&gt; string(7) "Segment"
+            ["options"] =&gt; array(3) {
+              ["route"] =&gt; string(24) "/[:controller[/:action]]"
+              ["constraints"] =&gt; array(2) {
+                ["controller"] =&gt; string(22) "[a-zA-Z][a-zA-Z0-9_-]*"
+                ["action"] =&gt; string(22) "[a-zA-Z][a-zA-Z0-9_-]*"
+              }
+              ["defaults"] =&gt; array(0) {
+              }
+            }
+          }
+        }
+      }
+      ["doctrine_orm_module_yuml"] =&gt; array(2) {
+        ["type"] =&gt; string(28) "Zend\Mvc\Router\Http\Literal"
+        ["options"] =&gt; array(2) {
+          ["route"] =&gt; string(26) "/ocra_service_manager_yuml"
+          ["defaults"] =&gt; array(2) {
+            ["controller"] =&gt; string(37) "DoctrineORMModule\Yuml\YumlController"
+            ["action"] =&gt; string(5) "index"
+          }
+        }
+      }
+      ["zfcuser"] =&gt; array(5) {
+        ["type"] =&gt; string(7) "Literal"
+        ["priority"] =&gt; int(1000)
+        ["options"] =&gt; array(2) {
+          ["route"] =&gt; string(5) "/user"
+          ["defaults"] =&gt; array(2) {
+            ["controller"] =&gt; string(7) "zfcuser"
+            ["action"] =&gt; string(5) "index"
+          }
+        }
+        ["may_terminate"] =&gt; bool(true)
+        ["child_routes"] =&gt; array(6) {
+          ["login"] =&gt; array(2) {
+            ["type"] =&gt; string(7) "Literal"
+            ["options"] =&gt; array(2) {
+              ["route"] =&gt; string(6) "/login"
+              ["defaults"] =&gt; array(2) {
+                ["controller"] =&gt; string(7) "zfcuser"
+                ["action"] =&gt; string(5) "login"
+              }
+            }
+          }
+          ["authenticate"] =&gt; array(2) {
+            ["type"] =&gt; string(7) "Literal"
+            ["options"] =&gt; array(2) {
+              ["route"] =&gt; string(13) "/authenticate"
+              ["defaults"] =&gt; array(2) {
+                ["controller"] =&gt; string(7) "zfcuser"
+                ["action"] =&gt; string(12) "authenticate"
+              }
+            }
+          }
+          ["logout"] =&gt; array(2) {
+            ["type"] =&gt; string(7) "Literal"
+            ["options"] =&gt; array(2) {
+              ["route"] =&gt; string(7) "/logout"
+              ["defaults"] =&gt; array(2) {
+                ["controller"] =&gt; string(7) "zfcuser"
+                ["action"] =&gt; string(6) "logout"
+              }
+            }
+          }
+          ["register"] =&gt; array(2) {
+            ["type"] =&gt; string(7) "Literal"
+            ["options"] =&gt; array(2) {
+              ["route"] =&gt; string(9) "/register"
+              ["defaults"] =&gt; array(2) {
+                ["controller"] =&gt; string(7) "zfcuser"
+                ["action"] =&gt; string(8) "register"
+              }
+            }
+          }
+          ["changepassword"] =&gt; array(2) {
+            ["type"] =&gt; string(7) "Literal"
+            ["options"] =&gt; array(2) {
+              ["route"] =&gt; string(16) "/change-password"
+              ["defaults"] =&gt; array(2) {
+                ["controller"] =&gt; string(7) "zfcuser"
+                ["action"] =&gt; string(14) "changepassword"
+              }
+            }
+          }
+          ["changeemail"] =&gt; array(2) {
+            ["type"] =&gt; string(7) "Literal"
+            ["options"] =&gt; array(2) {
+              ["route"] =&gt; string(13) "/change-email"
+              ["defaults"] =&gt; array(2) {
+                ["controller"] =&gt; string(7) "zfcuser"
+                ["action"] =&gt; string(11) "changeemail"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ["service_manager"] =&gt; array(5) {
+    ["abstract_factories"] =&gt; array(2) {
+      [0] =&gt; string(53) "Zend\Cache\Service\StorageCacheAbstractServiceFactory"
+      [1] =&gt; string(37) "Zend\Log\LoggerAbstractServiceFactory"
+    }
+    ["aliases"] =&gt; array(3) {
+      ["translator"] =&gt; string(13) "MvcTranslator"
+      ["zfcuser_zend_db_adapter"] =&gt; string(23) "Zend\Db\Adapter\Adapter"
+      ["bjyauthorize_zend_db_adapter"] =&gt; string(23) "Zend\Db\Adapter\Adapter"
+    }
+    ["factories"] =&gt; array(17) {
+      ["BjyAuthorize\Config"] =&gt; string(41) "BjyAuthorize\Service\ConfigServiceFactory"
+      ["BjyAuthorize\Guards"] =&gt; string(41) "BjyAuthorize\Service\GuardsServiceFactory"
+      ["BjyAuthorize\RoleProviders"] =&gt; string(48) "BjyAuthorize\Service\RoleProvidersServiceFactory"
+      ["BjyAuthorize\ResourceProviders"] =&gt; string(52) "BjyAuthorize\Service\ResourceProvidersServiceFactory"
+      ["BjyAuthorize\RuleProviders"] =&gt; string(48) "BjyAuthorize\Service\RuleProvidersServiceFactory"
+      ["BjyAuthorize\Guard\Controller"] =&gt; string(50) "BjyAuthorize\Service\ControllerGuardServiceFactory"
+      ["BjyAuthorize\Guard\Route"] =&gt; string(45) "BjyAuthorize\Service\RouteGuardServiceFactory"
+      ["BjyAuthorize\Provider\Role\Config"] =&gt; string(53) "BjyAuthorize\Service\ConfigRoleProviderServiceFactory"
+      ["BjyAuthorize\Provider\Role\ZendDb"] =&gt; string(53) "BjyAuthorize\Service\ZendDbRoleProviderServiceFactory"
+      ["BjyAuthorize\Provider\Resource\Config"] =&gt; string(57) "BjyAuthorize\Service\ConfigResourceProviderServiceFactory"
+      ["BjyAuthorize\Service\Authorize"] =&gt; string(37) "BjyAuthorize\Service\AuthorizeFactory"
+      ["BjyAuthorize\Provider\Identity\ProviderInterface"] =&gt; string(51) "BjyAuthorize\Service\IdentityProviderServiceFactory"
+      ["BjyAuthorize\Provider\Identity\AuthenticationIdentityProvider"] =&gt; string(65) "BjyAuthorize\Service\AuthenticationIdentityProviderServiceFactory"
+      ["BjyAuthorize\Provider\Role\ObjectRepositoryProvider"] =&gt; string(56) "BjyAuthorize\Service\ObjectRepositoryRoleProviderFactory"
+      ["BjyAuthorize\Collector\RoleCollector"] =&gt; string(48) "BjyAuthorize\Service\RoleCollectorServiceFactory"
+      ["BjyAuthorize\Provider\Identity\ZfcUserZendDb"] =&gt; string(64) "BjyAuthorize\Service\ZfcUserZendDbIdentityProviderServiceFactory"
+      ["BjyAuthorize\View\UnauthorizedStrategy"] =&gt; string(55) "BjyAuthorize\Service\UnauthorizedStrategyServiceFactory"
+    }
+    ["invokables"] =&gt; array(1) {
+      ["BjyAuthorize\View\RedirectionStrategy"] =&gt; string(37) "BjyAuthorize\View\RedirectionStrategy"
+    }
+    ["initializers"] =&gt; array(1) {
+      ["BjyAuthorize\Service\AuthorizeAwareServiceInitializer"] =&gt; string(53) "BjyAuthorize\Service\AuthorizeAwareServiceInitializer"
+    }
+  }
+  ["translator"] =&gt; array(2) {
+    ["locale"] =&gt; string(5) "en_US"
+    ["translation_file_patterns"] =&gt; array(1) {
+      [0] =&gt; array(3) {
+        ["type"] =&gt; string(7) "gettext"
+        ["base_dir"] =&gt; string(90) "/Users/vincentbaziuk/Documents/insset/php/apiculture/module/Application/config/../language"
+        ["pattern"] =&gt; string(5) "%s.mo"
+      }
+    }
+  }
+  ["controllers"] =&gt; array(1) {
+    ["invokables"] =&gt; array(3) {
+      ["Application\Controller\Index"] =&gt; string(38) "Application\Controller\IndexController"
+      ["Apiculture\Controller\Apiculture"] =&gt; string(42) "Apiculture\Controller\ApicultureController"
+      ["zfcuser"] =&gt; string(33) "ZfcUser\Controller\UserController"
+    }
+  }
+  ["view_manager"] =&gt; array(7) {
+    ["display_not_found_reason"] =&gt; bool(true)
+    ["display_exceptions"] =&gt; bool(true)
+    ["doctype"] =&gt; string(5) "HTML5"
+    ["not_found_template"] =&gt; string(9) "error/404"
+    ["exception_template"] =&gt; string(11) "error/index"
+    ["template_map"] =&gt; array(8) {
+      ["layout/layout"] =&gt; string(106) "/Users/vincentbaziuk/Documents/insset/php/apiculture/module/Application/config/../view/layout/layout.phtml"
+      ["application/index/index"] =&gt; string(116) "/Users/vincentbaziuk/Documents/insset/php/apiculture/module/Application/config/../view/application/index/index.phtml"
+      ["error/404"] =&gt; string(102) "/Users/vincentbaziuk/Documents/insset/php/apiculture/module/Application/config/../view/error/404.phtml"
+      ["error/index"] =&gt; string(104) "/Users/vincentbaziuk/Documents/insset/php/apiculture/module/Application/config/../view/error/index.phtml"
+      ["zend-developer-tools/toolbar/doctrine-orm-queries"] =&gt; string(159) "/Users/vincentbaziuk/Documents/insset/php/apiculture/vendor/doctrine/doctrine-orm-module/config/../view/zend-developer-tools/toolbar/doctrine-orm-queries.phtml"
+      ["zend-developer-tools/toolbar/doctrine-orm-mappings"] =&gt; string(160) "/Users/vincentbaziuk/Documents/insset/php/apiculture/vendor/doctrine/doctrine-orm-module/config/../view/zend-developer-tools/toolbar/doctrine-orm-mappings.phtml"
+      ["error/403"] =&gt; string(117) "/Users/vincentbaziuk/Documents/insset/php/apiculture/vendor/bjyoungblood/bjy-authorize/config/../view/error/403.phtml"
+      ["zend-developer-tools/toolbar/bjy-authorize-role"] =&gt; string(155) "/Users/vincentbaziuk/Documents/insset/php/apiculture/vendor/bjyoungblood/bjy-authorize/config/../view/zend-developer-tools/toolbar/bjy-authorize-role.phtml"
+    }
+    ["template_path_stack"] =&gt; array(4) {
+      [0] =&gt; string(86) "/Users/vincentbaziuk/Documents/insset/php/apiculture/module/Application/config/../view"
+      ["zenddevelopertools"] =&gt; string(109) "/Users/vincentbaziuk/Documents/insset/php/apiculture/vendor/zendframework/zend-developer-tools/config/../view"
+      ["zfcuser"] =&gt; string(94) "/Users/vincentbaziuk/Documents/insset/php/apiculture/vendor/zf-commons/zfc-user/config/../view"
+      [1] =&gt; string(85) "/Users/vincentbaziuk/Documents/insset/php/apiculture/module/Apiculture/config/../view"
+    }
+  }
+  ["console"] =&gt; array(1) {
+    ["router"] =&gt; array(1) {
+      ["routes"] =&gt; array(0) {
+      }
+    }
+  }
+  ["doctrine"] =&gt; array(9) {
+    ["cache"] =&gt; array(9) {
+      ["apc"] =&gt; array(1) {
+        ["class"] =&gt; string(30) "Doctrine\Common\Cache\ApcCache"
+      }
+      ["array"] =&gt; array(1) {
+        ["class"] =&gt; string(32) "Doctrine\Common\Cache\ArrayCache"
+      }
+      ["filesystem"] =&gt; array(2) {
+        ["class"] =&gt; string(37) "Doctrine\Common\Cache\FilesystemCache"
+        ["directory"] =&gt; string(25) "data/DoctrineModule/cache"
+      }
+      ["memcache"] =&gt; array(2) {
+        ["class"] =&gt; string(35) "Doctrine\Common\Cache\MemcacheCache"
+        ["instance"] =&gt; string(17) "my_memcache_alias"
+      }
+      ["memcached"] =&gt; array(2) {
+        ["class"] =&gt; string(36) "Doctrine\Common\Cache\MemcachedCache"
+        ["instance"] =&gt; string(18) "my_memcached_alias"
+      }
+      ["redis"] =&gt; array(2) {
+        ["class"] =&gt; string(32) "Doctrine\Common\Cache\RedisCache"
+        ["instance"] =&gt; string(14) "my_redis_alias"
+      }
+      ["wincache"] =&gt; array(1) {
+        ["class"] =&gt; string(35) "Doctrine\Common\Cache\WinCacheCache"
+      }
+      ["xcache"] =&gt; array(1) {
+        ["class"] =&gt; string(33) "Doctrine\Common\Cache\XcacheCache"
+      }
+      ["zenddata"] =&gt; array(1) {
+        ["class"] =&gt; string(35) "Doctrine\Common\Cache\ZendDataCache"
+      }
+    }
+    ["connection"] =&gt; array(1) {
+      ["orm_default"] =&gt; array(4) {
+        ["configuration"] =&gt; string(11) "orm_default"
+        ["eventmanager"] =&gt; string(11) "orm_default"
+        ["params"] =&gt; array(5) {
+          ["host"] =&gt; string(9) "127.0.0.1"
+          ["port"] =&gt; string(0) ""
+          ["user"] =&gt; string(4) "root"
+          ["password"] =&gt; string(0) ""
+          ["dbname"] =&gt; string(10) "apiculture"
+        }
+        ["driverClass"] =&gt; string(36) "Doctrine\DBAL\Driver\PDOMySql\Driver"
+      }
+    }
+    ["configuration"] =&gt; array(1) {
+      ["orm_default"] =&gt; array(8) {
+        ["metadata_cache"] =&gt; string(5) "array"
+        ["query_cache"] =&gt; string(5) "array"
+        ["result_cache"] =&gt; string(5) "array"
+        ["driver"] =&gt; string(11) "orm_default"
+        ["generate_proxies"] =&gt; bool(true)
+        ["proxy_dir"] =&gt; string(28) "data/DoctrineORMModule/Proxy"
+        ["proxy_namespace"] =&gt; string(23) "DoctrineORMModule\Proxy"
+        ["filters"] =&gt; array(0) {
+        }
+      }
+    }
+    ["driver"] =&gt; array(2) {
+      ["orm_default"] =&gt; array(2) {
+        ["class"] =&gt; string(39) "Doctrine\ORM\Mapping\Driver\DriverChain"
+        ["drivers"] =&gt; array(2) {
+          ["ZfcUser\Entity"] =&gt; string(14) "zfcuser_entity"
+          ["Apiculture\Entity"] =&gt; string(14) "zfcuser_entity"
+        }
+      }
+      ["zfcuser_entity"] =&gt; array(2) {
+        ["class"] =&gt; string(44) "Doctrine\ORM\Mapping\Driver\AnnotationDriver"
+        ["paths"] =&gt; string(102) "/Users/vincentbaziuk/Documents/insset/php/apiculture/module/Apiculture/config/../src/Apiculture/Entity"
+      }
+    }
+    ["entitymanager"] =&gt; array(1) {
+      ["orm_default"] =&gt; array(2) {
+        ["connection"] =&gt; string(11) "orm_default"
+        ["configuration"] =&gt; string(11) "orm_default"
+      }
+    }
+    ["eventmanager"] =&gt; array(1) {
+      ["orm_default"] =&gt; array(0) {
+      }
+    }
+    ["sql_logger_collector"] =&gt; array(1) {
+      ["orm_default"] =&gt; array(0) {
+      }
+    }
+    ["entity_resolver"] =&gt; array(1) {
+      ["orm_default"] =&gt; array(0) {
+      }
+    }
+    ["authentication"] =&gt; array(1) {
+      ["orm_default"] =&gt; array(1) {
+        ["objectManager"] =&gt; string(34) "doctrine.entitymanager.orm_default"
+      }
+    }
+  }
+  ["zenddevelopertools"] =&gt; array(2) {
+    ["profiler"] =&gt; array(6) {
+      ["collectors"] =&gt; array(3) {
+        ["orm_default"] =&gt; string(41) "doctrine.sql_logger_collector.orm_default"
+        ["orm_default_mappings"] =&gt; string(38) "doctrine.mapping_collector.orm_default"
+        ["bjy_authorize_role_collector"] =&gt; string(36) "BjyAuthorize\Collector\RoleCollector"
+      }
+      ["enabled"] =&gt; bool(true)
+      ["strict"] =&gt; bool(false)
+      ["flush_early"] =&gt; bool(false)
+      ["cache_dir"] =&gt; string(10) "data/cache"
+      ["matcher"] =&gt; array(0) {
+      }
+    }
+    ["toolbar"] =&gt; array(5) {
+      ["entries"] =&gt; array(3) {
+        ["orm_default"] =&gt; string(49) "zend-developer-tools/toolbar/doctrine-orm-queries"
+        ["orm_default_mappings"] =&gt; string(50) "zend-developer-tools/toolbar/doctrine-orm-mappings"
+        ["bjy_authorize_role_collector"] =&gt; string(47) "zend-developer-tools/toolbar/bjy-authorize-role"
+      }
+      ["enabled"] =&gt; bool(true)
+      ["auto_hide"] =&gt; bool(false)
+      ["position"] =&gt; string(6) "bottom"
+      ["version_check"] =&gt; bool(true)
+    }
+  }
+  ["bjyauthorize"] =&gt; array(9) {
+    ["default_role"] =&gt; string(5) "guest"
+    ["authenticated_role"] =&gt; string(4) "user"
+    ["identity_provider"] =&gt; string(61) "BjyAuthorize\Provider\Identity\AuthenticationIdentityProvider"
+    ["role_providers"] =&gt; array(1) {
+      ["BjyAuthorize\Provider\Role\ObjectRepositoryProvider"] =&gt; array(2) {
+        ["object_manager"] =&gt; string(35) "doctrine.entity_manager.orm_default"
+        ["role_entity_class"] =&gt; string(22) "Apiculture\Entity\Role"
+      }
+    }
+    ["resource_providers"] =&gt; array(0) {
+    }
+    ["rule_providers"] =&gt; array(0) {
+    }
+    ["guards"] =&gt; array(0) {
+    }
+    ["unauthorized_strategy"] =&gt; string(38) "BjyAuthorize\View\UnauthorizedStrategy"
+    ["template"] =&gt; string(9) "error/403"
+  }
+  ["zfcuser"] =&gt; array(4) {
+    ["user_entity_class"] =&gt; string(22) "Apiculture\Entity\User"
+    ["enable_default_entities"] =&gt; bool(false)
+    ["auth_adapters"] =&gt; array(1) {
+      [100] =&gt; string(33) "ZfcUser\Authentication\Adapter\Db"
+    }
+    ["login_redirect_route"] =&gt; string(9) "connected"
+  }
+}
+</pre>            </span>
+        </span>
+    </div>
+</div>
+<div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/png;base64,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" alt="Application Config">
+        <span class="zdt-toolbar-info">ApplicationConfig</span>
+    </div>
+    <div class="zdt-toolbar-detail">
+        <span class="zdt-toolbar-info zdt-toolbar-info-redundant">
+            <span class="zdt-detail-label">Application Config (<code>ApplicationConfig</code>)</span>
+        </span>
+        <span class="zdt-toolbar-info">
+            <span class="zdt-detail-pre">
+<pre>array(2) {
+  ["modules"] =&gt; array(9) {
+    [0] =&gt; string(11) "Application"
+    [1] =&gt; string(18) "ZendDeveloperTools"
+    [2] =&gt; string(14) "DoctrineModule"
+    [3] =&gt; string(17) "DoctrineORMModule"
+    [4] =&gt; string(7) "ZfcBase"
+    [5] =&gt; string(7) "ZfcUser"
+    [6] =&gt; string(18) "ZfcUserDoctrineORM"
+    [7] =&gt; string(12) "BjyAuthorize"
+    [8] =&gt; string(10) "Apiculture"
+  }
+  ["module_listener_options"] =&gt; array(2) {
+    ["module_paths"] =&gt; array(2) {
+      [0] =&gt; string(8) "./module"
+      [1] =&gt; string(8) "./vendor"
+    }
+    ["config_glob_paths"] =&gt; array(1) {
+      [0] =&gt; string(39) "config/autoload/{,*.}{global,local}.php"
+    }
+  }
+}
+</pre>            </span>
+        </span>
+    </div>
+</div>
+<div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzU1MkQ0QURDODkyMTFFMUE4RDU5MDZBOEM2RTM5QjYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzU1MkQ0QUVDODkyMTFFMUE4RDU5MDZBOEM2RTM5QjYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NTUyRDRBQkM4OTIxMUUxQThENTkwNkE4QzZFMzlCNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NTUyRDRBQ0M4OTIxMUUxQThENTkwNkE4QzZFMzlCNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PryYMQ8AAAN9SURBVHjapFRdSJNhFH6/7dvUzQWbOLacM92UNW1E4WDRhWKhiN0JEUU3/RAIXdiV0I1dKF7oRRe7mCmIonZRJM0agqRgiZIs0VnD5s/mVNRl4eZ+3E/PO76FjBVWBx7O9573fc97znPO+Riv10uOyVXgJnAOOAvkkMziARzAG+BlQUHBLyfMxsYG1bcAMyCJRqORra2tA4fDEfR4PEeQOAOhhxKJBMnLyxPodDpBSUlJrkQiyeX89AMPVCrVIYtD97CwjI6Ouru7u7/Mzc35uAiWgW3gCOBxF+OAFDgDaBCZsr6+XtbS0nKdZdnzsBmYmZmZjwqF4mJxcfGjeDz+an19fYWcUIqKiqhzo8VieVZbW6vCmmEXFhbicrmcuFyux5Q3OLVBuwDKBY02keZHBJwGlKurq9XQ9YAqGAzG6CYLTo7ghHCp3OVA+foG6nzpKcN+CnYlvvnHXxEIBMk1a7fbvRUVFZkykuGyLNMGLU66oFsCVPP39vaI2+02aLXaXJFIRItE/hYjIyMbXV1dU+iO5+zAwMCV2dnZybq6Oqlery9paGjILysrk6jVapFUKs1KjyQcDsdwMQj+/BMTE76pqakfoO1tb2+vqbKykjCDg4MfDAaDCTxOLy0tvWhvb+fPz8/ni8ViLbjKgz3B4/GYVJqwhdCbHvSrq7m52d/Y2FiOs/fpHqhjWLxIuKKYEKGpv5/2KNmBzQE48U25YbkeZOBcAacm4DZnT96PxWLJF9n9/f3vWKRnJqfApepMBclUlFTb8BcXF8Xg6oJGozn1LwWhWFtbO2hra/sE3cMODQ3JQajVbDYbMEb5VVVVcsykKDs7m/3TlOzu7obQcr6xsbFdaHtPT88hikSY4eHh9xiZS36//2lHR8fy9PR0eSAQUGMUZYhcAM6SteAmhsFebHt7OwyqPKWlpZ+bmpqCRqPxDujRmUwmhsUmU1hYSNCDD1tbW2kKbmzO+Xy+yc3NTS8chPh8Pg/2BP3rYExlSqVSKxQK9XjgRorXSCSSrCyLkYlyVU6JGgfUiI5Q/E7S7hD6KNU88DeJRj2kB/4HfX19X5OO4cxptVrVaNQcCF8mk2WftLoY2xA43+ns7HTabLYn8LfEjI+Pk5qaGiEW15B+FQi+jCKJ8EcWw3kWUmGOp4biRcFtEL87v9PpXMEIvoP5NffLIz8FGAAqeUQbl180BwAAAABJRU5ErkJggg==" alt="Database (Zend\Db)">
+        <span class="zdt-toolbar-info">
+            N/A        </span>
+    </div>
+    <div class="zdt-toolbar-detail zdt-toolbar-dbquery-detail">
+        <div class="zdt-toolbar-detail-inner">
+                        <span class="zdt-toolbar-info zdt-toolbar-info-heading">Error</span>
+            <span class="zdt-toolbar-info">
+                You have to install or enable <a href="https://github.com/bjyoungblood/BjyProfiler">@bjyoungblood's Zend\Db Profiler</a> to use this feature.
+            </span>
+                    </div>
+    </div>
+</div>
+<style>
+.zdt-toolbar-entry .zdt-toolbar-detail .zdt-toolbar-detail-inner {
+    padding: 5px;
+    font-size: 11px;
+    max-width: 600px;
+    width: 600px;
+    max-height: 400px;
+    min-height: 100px;
+    overflow-y: auto!important;
+    overflow-x: hidden;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-dbquery-detail .zdt-detail-value-right {
+
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .zdt-toolbar-detail-inner .zdt-toolbar-dbquery {
+    max-height: none!important;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .zdt-detail-dbquery {
+    white-space: normal;
+    width: 400px;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .zdt-detail-dbquery .highlight {
+    color: #80DC09;
+    font-weight: bold;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-info .clear {
+    clear: both;
+    display: block;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .zdt-toolbar-dbquery hr {
+    border: 0;
+    border-top: 1px solid #80DC09;
+    clear: both;
+}
+</style>
+<div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH3AwOFjIRE2xHhwAAAvZJREFUSMedlF9oVnUYxz/P77zzzRmruYELGhh48Qor3026sOlFUFHrQmMuvXAQZrS9r+DawkVSeCPsItmibbB3zMKSFBGLJcIuhnazaM2tZjRRr15LcP3BomKdc35PFxs7O2fnde92Lp/z/D6/7/N9nt8jRD7NPF3l4w0BO0CnHJFj0jc5RpGfiQZ8vB6gASgHedZX+drNpJ9ZM1BhWySSEGTEzaafXxNQ0NGYvA2iMuy1pvesGugk3feAWzG5SUTOetn07tUp7P7xd2d2Swo4FQtVueBlal8vGggg58/71nF6VfkGxIsWAeS8bPpQ7NllTTm8PeX7tgfhhbj/ocPCgNM32VIQuFDKR8D64oZEVeCM0z/VvKxkP5M+AgwuhUl1CtPSg2nsgMS6WI2KHPBbaztDCt3M9p2CvbLgT2Dw258gTzw1ryU/gz35Grj/xUm1in2ppP/7EaMgYHNRGAB//UFI7cEuSJQUaK7p1aYmR9xM3YuCXo616JFKTPsQUlkduPbTGHagHdy5OEtfNYLuLej5/V+xJ/ajN8YDpVt3YFq6oSQZo1P2iJ+pm1a0Zn5sS5HnmpGKx+H+bJC4fgNS3wgmGFvNz2C734C5v5cif0ko+tjiBa+0Ibv2FjUwUp3C7OvEnn5/aXiTCTUjfFsRY2iXhRICeYVHAexwP/LzbSh9GP78LcgqLcM0tsO6YN71zgz2XFeUdy+hwjTKk/NPxUW//SqcUlaB0zYYhk2NYk+9A370mcs1g8qFgiVtrMIc/RQ2bQ5g45exQ0djYAD2S+N4MgzkY6d137tIeVUA++Eq9rPjYG1c+l3Hc84YyU24qLbGKizbGMBufocd7ADPLdAgOSa5iX8Wt42bre0SpTPkyOYapOFNmM1jv/gw/nUAiH6c6Js6GFpfCuJlaz8Q5a2V9mAElnNc57DkJtzYBetl0w2qclIgtQIqD3Qm+ic/f+DGBtDjGP9e3cugDQL1CpUISVHuqHAd5aKTfOiSdI/9Gz37P6crCTosFB7sAAAAAElFTkSuQmCC" alt="Doctrine ORM (Queries)">
+        <span class="zdt-toolbar-info">
+            3            queries in
+            2.67 ms s
+        </span>
+    </div>
+    <div class="zdt-toolbar-detail">
+        <span class="zdt-toolbar-info zdt-toolbar-info-heading">
+            <a href="https://github.com/doctrine/DoctrineORMModule" target="_blank">
+                DoctrineORMModule
+            </a>
+        </span>
+        <span class="zdt-toolbar-info zdt-toolbar-info-heading">
+            Queries for
+            <span class="ddt-toolbar-info"> orm_default</span>
+        </span>
+        <span class="zdt-toolbar-info ddt-toolbar-info">
+                    <hr>
+            <span class="zdt-detail-label">SQL</span>
+            <span class="zdt-detail-value ddt-detail-query ddt-detail-value">
+                                <span class="highlight">SELECT</span> t0.id <span class="highlight">AS</span> id1, t0.username <span class="highlight">AS</span> username2, t0.email <span class="highlight">AS</span> email3, t0.display<span class="highlight">N</span>ame <span class="highlight">AS</span> display<span class="highlight">N</span>ame4, t0.password <span class="highlight">AS</span> password5 <span class="highlight">FROM</span> users t0 <span class="highlight">WHERE</span> t0.id = ?            </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Params</span>
+            <span class="zdt-detail-value ddt-detail-value">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; int 1
+<br>
+                                                </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Types</span>
+            <span class="zdt-detail-value ddt-detail-value">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; string 'integer' (length=7)
+<br>
+                                                </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Time</span>
+            <span class="zdt-detail-value ddt-detail-value">0.0013349056243896</span>
+            <span class="clear"></span>
+                    <hr>
+            <span class="zdt-detail-label">SQL</span>
+            <span class="zdt-detail-value ddt-detail-query ddt-detail-value">
+                                <span class="highlight">SELECT</span> h0_.id <span class="highlight">AS</span> id0, h0_.name <span class="highlight">AS</span> name1, h0_.longitude <span class="highlight">AS</span> longitude2, h0_.latitude <span class="highlight">AS</span> latitude3, h0_.id<span class="highlight">U</span>ser <span class="highlight">AS</span> id<span class="highlight">U</span>ser4 <span class="highlight">FROM</span> hive h0_ <span class="highlight">WHERE</span> h0_.id<span class="highlight">U</span>ser = ?            </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Params</span>
+            <span class="zdt-detail-value ddt-detail-value">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; int 1
+<br>
+                                                </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Types</span>
+            <span class="zdt-detail-value ddt-detail-value">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; string 'integer' (length=7)
+<br>
+                                                </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Time</span>
+            <span class="zdt-detail-value ddt-detail-value">0.00064992904663086</span>
+            <span class="clear"></span>
+                    <hr>
+            <span class="zdt-detail-label">SQL</span>
+            <span class="zdt-detail-value ddt-detail-query ddt-detail-value">
+                                <span class="highlight">SELECT</span> t0.id <span class="highlight">AS</span> id1, t0.role<span class="highlight">I</span>d <span class="highlight">AS</span> role<span class="highlight">I</span>d2, t0.parent_id <span class="highlight">AS</span> parent_id3 <span class="highlight">FROM</span> role t0 <span class="highlight">INNER</span> <span class="highlight">JOIN</span> user_role_linker <span class="highlight">ON</span> t0.id = user_role_linker.role_id <span class="highlight">WHERE</span> user_role_linker.user_id = ?            </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Params</span>
+            <span class="zdt-detail-value ddt-detail-value">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; int 1
+<br>
+                                                </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Types</span>
+            <span class="zdt-detail-value ddt-detail-value">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; null
+<br>
+                                                </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Time</span>
+            <span class="zdt-detail-value ddt-detail-value">0.0006871223449707</span>
+            <span class="clear"></span>
+                </span>
+    </div>
+</div>
+<style>
+.zdt-toolbar-entry .zdt-toolbar-detail .ddt-toolbar-info {
+    font-size: 11px;
+    max-width: 600px;
+    witdh: 600px;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .ddt-detail-query {
+    white-space: normal;
+    width: 400px;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .ddt-detail-query .highlight {
+    color: #80DC09;
+    font-weight: bold;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-info .clear {
+    clear: both;
+    display: block;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .ddt-toolbar-info hr {
+    border: 0;
+    border-top: 1px solid #80DC09;
+    clear: both;
+}
+</style>
+<div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH3AwOFjIRE2xHhwAAAvZJREFUSMedlF9oVnUYxz/P77zzzRmruYELGhh48Qor3026sOlFUFHrQmMuvXAQZrS9r+DawkVSeCPsItmibbB3zMKSFBGLJcIuhnazaM2tZjRRr15LcP3BomKdc35PFxs7O2fnde92Lp/z/D6/7/N9nt8jRD7NPF3l4w0BO0CnHJFj0jc5RpGfiQZ8vB6gASgHedZX+drNpJ9ZM1BhWySSEGTEzaafXxNQ0NGYvA2iMuy1pvesGugk3feAWzG5SUTOetn07tUp7P7xd2d2Swo4FQtVueBlal8vGggg58/71nF6VfkGxIsWAeS8bPpQ7NllTTm8PeX7tgfhhbj/ocPCgNM32VIQuFDKR8D64oZEVeCM0z/VvKxkP5M+AgwuhUl1CtPSg2nsgMS6WI2KHPBbaztDCt3M9p2CvbLgT2Dw258gTzw1ryU/gz35Grj/xUm1in2ppP/7EaMgYHNRGAB//UFI7cEuSJQUaK7p1aYmR9xM3YuCXo616JFKTPsQUlkduPbTGHagHdy5OEtfNYLuLej5/V+xJ/ajN8YDpVt3YFq6oSQZo1P2iJ+pm1a0Zn5sS5HnmpGKx+H+bJC4fgNS3wgmGFvNz2C734C5v5cif0ko+tjiBa+0Ibv2FjUwUp3C7OvEnn5/aXiTCTUjfFsRY2iXhRICeYVHAexwP/LzbSh9GP78LcgqLcM0tsO6YN71zgz2XFeUdy+hwjTKk/NPxUW//SqcUlaB0zYYhk2NYk+9A370mcs1g8qFgiVtrMIc/RQ2bQ5g45exQ0djYAD2S+N4MgzkY6d137tIeVUA++Eq9rPjYG1c+l3Hc84YyU24qLbGKizbGMBufocd7ADPLdAgOSa5iX8Wt42bre0SpTPkyOYapOFNmM1jv/gw/nUAiH6c6Js6GFpfCuJlaz8Q5a2V9mAElnNc57DkJtzYBetl0w2qclIgtQIqD3Qm+ic/f+DGBtDjGP9e3cugDQL1CpUISVHuqHAd5aKTfOiSdI/9Gz37P6crCTosFB7sAAAAAElFTkSuQmCC" alt="Doctrine ORM (Mappings)">
+        <span class="zdt-toolbar-info">
+            3            mappings
+        </span>
+    </div>
+    <div class="zdt-toolbar-detail">
+        <span class="zdt-toolbar-info zdt-toolbar-info-heading">
+            <a href="https://github.com/doctrine/DoctrineORMModule" target="_blank">
+                DoctrineORMModule
+            </a>
+        </span>
+        <span class="zdt-toolbar-info zdt-toolbar-info-heading">
+            Mappings for
+            <span class="ddt-toolbar-info">orm_default_mappings</span>
+        </span>
+        <form action="/ocra_service_manager_yuml" method="post" target="_blank">
+                        <input name="dsl_text" value="[Apiculture.Entity.User|+id;username;email;displayName;password]-roles *&gt;[Apiculture.Entity.Role|+id;roleId],[Apiculture.Entity.User|+id;username;email;displayName;password]&lt;user 1-hives *&lt;&gt;[Apiculture.Entity.Hive|+id;name;longitude;latitude],[Apiculture.Entity.Role|+id;roleId]-parent 1&gt;[Apiculture.Entity.Role|+id;roleId]" type="hidden">
+            <span class="zdt-toolbar-info zdt-toolbar-info-heading">
+                <input value="Dependency Graph" type="submit">
+            </span>
+        </form>
+        <span class="zdt-toolbar-info ddt-toolbar-info">
+                    <span class="zdt-detail-value">Apiculture\Entity\User</span>
+            <br>
+                    <span class="zdt-detail-value">Apiculture\Entity\Role</span>
+            <br>
+                    <span class="zdt-detail-value">Apiculture\Entity\Hive</span>
+            <br>
+                </span>
+    </div>
+</div>
+<style>
+.zdt-toolbar-entry .zdt-toolbar-detail .ddt-toolbar-info {
+
+    font-size: 11px;
+    max-width: 600px;
+    witdh: 600px;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .ddt-detail-query {
+
+    white-space: normal;
+    width: 400px;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .ddt-detail-query .highlight {
+
+    color: #80DC09;
+    font-weight: bold;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-info .clear {
+
+    clear: both;
+    display: block;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .ddt-toolbar-info hr {
+
+    border: 0;
+    border-top: 1px solid #80DC09;
+    clear: both;
+}
+</style>
+<div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QIaFysBPw45wAAAAtNJREFUOMuNlEtoXVUUhr//5MBVEExV1Jlkb+mJocY6cuJjoBNRcaDgyDgIVRo78tVCB8kkCrY4NEgUtTNFRXzgQPABHWgCYkCCF3o2VGqxAxtQuDcmN/fvoPu0N7dJcI3O2Xvtb/9r7bWWAOq6roAp4CmgAtja2qIsS3ayXq/HyMhI89sGPgVOxRjbquv6OkmfAI8BF4F/gN+AwjaStsHymoER4ABwAzAKfG376VKSbW9IWgZO2L4dKCRdAwOQhO1S0um8dCMwD2xIcpmdSuAz4GZJR2zvt71juAMXzYQQFgBSSg8A9wAMJqkFXADuAKyd5IEBAfO238+watChGM73brCsWMCC7bkY43pK6RfbB/I5hhXuZc0l34cQZrKyd4F7gY29FLJHmH8AxzLsGDANrA87l/8T9hfwcAjhTIbN73agUdgHti6nysOwb4C7M+ww8IbtIu83fltXFNougYOSbrW9nosW2wIWgCMxxn5K6Vng7YF8Kn+PA08Af5ILeBP4zvZtkrqNakkfSHoxww4Dp3IkGoqga/sW4F/ARe6SLyUF23fZ/gk4CkyHEJxSOtooG0iRAdk+b3u/pAB8bntDAO12e19Zlh8DjxRF8eTY2NgXdV1fD5yU9HxutYGStCSdk/Ryv9//CPi21+s9U1XVWgFQVdXa5ubmK5LOdbvdhdnZ2dGiKBaBGaBs8joAO7+ysvJgt9t9S9LfwOtVVa1deeV2u834+PhKp9M53mq1Rqempi4sLy+flHS2aeGrrayzS0tLj05OTv7earX2dTqdl2KMP6SUtjmyurrKxMQEKaXjwBxw0faipIds359pp23/KOkQcBMwF0KYb85uA+ZBS4yRlNI0cAi4D3gzDw6A/4DXbP8saTGE8F5KiRDC1Wk0XOkNtK7rOyWdAB63/WtWeBD4yvarMcYzje+28bZbC6WUmun8HPBOfpEXgA+Ba0CNXQJIOlq0WInvCQAAAABJRU5ErkJggg==" alt="BjyAuthorize Current Identity Roles">
+        <span class="zdt-toolbar-info">
+               <span class="zdt-toolbar-extra-info">
+                            </span>
+        </span>
+    </div>
+    <div class="zdt-toolbar-detail">
+        <span class="zdt-toolbar-info">
+            <a href="https://github.com/bjyoungblood/BjyAuthorize/" target="_blank">BjyAuthorize</a>
+            <br>
+            <span class="zdt-detail-label">Identity Roles - No role</span>
+        </span>
+            </div>
+</div>
+    <a class="zdf-toolbar-hide-button" title="Close Toolbar" onclick="this.parentNode.style.display = 'none';">✖</a>
+</div>
+<!-- END Zend Developer Toolbar -->
+
+
+</body></html>
