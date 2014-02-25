@@ -1,4 +1,42 @@
 /*CSS*/ 
+#navbar {
+  background : url(../img/apiculture-banner.png) right no-repeat;
+  height : 240px;
+}
+
+#navbar h1 {
+  color : #d9aa37;
+  font-size : 50px;
+  padding : 50px;
+  height : 200px;
+  margin : 0;
+}
+
+#menu li {
+  display : inline;
+  /*padding : 0 5px;*/
+  border-right : 1px solid #000;
+  padding-right : 5px;
+}
+
+#menu li:nth-last-child(2), #menu li:last-child {
+  border-right : none;
+}
+
+#menu li.right {
+  float : right;
+  margin-right : 10px;
+}
+
+ul#menu{
+  list-style-type : none;
+  height : 40px;
+  font-size : 20px;
+  margin : 0;
+  background-image:linear-gradient(to right, #d9aa37, #FFF);
+  line-height : 40px;
+}
+
 #hiveid {
     display : none;
 }
@@ -23,7 +61,7 @@
 
 
 .contenu {
-    margin-top : 20px;
+    margin-top : 70px;
 }
 
 h1 {

@@ -28,24 +28,28 @@
     <body>
         
         <header>
-        <nav class="navbar-inverse " role="navigation">
-            <div class="container">
+            <nav id="navbar" role="navigation">
+                <h1>Apiculture application</h1>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a  href="<?php echo $this->url('home') ?>"><h1><?php echo $this->translate('Apiculture Application') ?></h1></a>
+                    <!--<a  href="<?php echo $this->url('home') ?>"><h1><?php echo $this->translate('Apiculture Application') ?></h1></a>-->
                 </div>
-                <!--<div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav pull-right">-->
-                        <div class="active navbar-btn navbar-text pull-right">Pas encore inscrit ? <a class="btn btn-primary navbar-btn " href="<?php echo $this->url('zfcuser/register'); ?>"><?php echo $this->translate('Enregistrez-vous') ?></a></div>
-
-                   <!-- </ul>
-                </div><!--/.nav-collapse -->
-            <!--</div>-->
-        </nav>
+                
+                           
+                <ul id="menu">
+                    <li>Accueil</li>
+                    <li>Mon compte</li>
+                    <li>Dashboard</li>
+                    <li class="right">Pas encore inscrit ? 
+                        <a href="<?php echo $this->url('zfcuser/register'); ?>"><?php echo $this->translate('Register') ?>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </header>
         <div class="container">
             <?php echo $this->content; ?>
