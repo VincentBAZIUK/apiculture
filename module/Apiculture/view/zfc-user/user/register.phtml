@@ -19,7 +19,8 @@ $form->setAttribute('method', 'post');
     <?php foreach ($form as $element): ?>
         <div class="form-group">
         <?php if (!$element instanceof Zend\Form\Element\Button): ?>
-            <label class="control-label col-sm-2 col-md-4"><?php echo $this->formLabel($element) ?></label>
+            <label class="control-label col-sm-3 col-md-3 col-lg-3"><?php echo $this->formLabel($element) ?>
+            </label>
         <?php endif ?>
         <?php if ($element instanceof Zend\Form\Element\Button): ?>
             <?php $element->setAttribute('class','btn btn-info'); ?>
@@ -27,7 +28,7 @@ $form->setAttribute('method', 'post');
         <?php elseif ($element instanceof Zend\Form\Element\Captcha): ?>
             <dd><?php echo $this->formCaptcha($element) . $this->formElementErrors($element) ?></dd>
         <?php else: ?>
-            <dd class="col-sm-6 col-md-8"><?php $element->setAttribute('class','form-control'); echo $this->formInput($element) . $this->formElementErrors($element) ?></dd>
+            <dd class="col-sm-9 col-md-9 col-lg-9"><?php $element->setAttribute('class','form-control'); echo $this->formInput($element) . $this->formElementErrors($element) ?></dd>
         <?php endif ?>
         </div>    
     <?php endforeach ?>

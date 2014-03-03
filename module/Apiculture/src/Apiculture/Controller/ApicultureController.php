@@ -3,8 +3,10 @@
 Namespace Apiculture\Controller;
 
 use Apiculture\Entity\Hive;
+use Apiculture\Form\UpdateForm;
 use Apiculture\Form\ApicultureForm;
 use Ivory\GoogleMap\Helper\MapHelper;
+use DoctrineModule\Stdlib\Hydrator\DoctrineObject;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlays\Marker;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -80,33 +82,28 @@ class ApicultureController extends AbstractActionController
     
     public function updatehiveAction()
     {
-        var_dump('toto');
-        exit;
-        $id = $this->params('id',null);
-        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-        $form = new ApicultureForm($em);
-        $form->get('submit')->setValue('Modifier');
+        /*$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+        $form = new UpdateForm($em);
+        $form->get('submit')->setValue('Update');
         $request = $this->getRequest();
-        $hive = $em->getRepository('Apiculture\Entity\Hive')->find($id);
-        
+        $hive = $em->getRepository('Apiculture\Entity\Hive')->find(22);
         $form->bind($hive);
-        
+
         if ($request->isPost()) {
-            $form->setData($request->getPost());
-        
+            $form->setDate($request->getPost());
+
             if ($form->isValid()) {
                 $em->persist($hive);
                 $em->flush();
-                
+
                 return $this->redirect()->toRoute('connected');
             }
         }
-        
+
         return new ViewModel(array(
             'form' => $form,
-            'hive' => $hive,
+            'hive' => $hive
             )
-        );
+        );*/
     }
-    
 }

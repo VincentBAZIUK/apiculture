@@ -1,10 +1,18 @@
-/*CSS*/ 
-#navbar {
-  background : url(../img/apiculture-banner.png) right no-repeat;
-  height : 240px;
+/****************************************************/
+/*                  MAIN                            */
+/****************************************************/
+#main {
+  margin-top : 35px;
+  overflow : auto;
+  display : block;
 }
 
+
+/****************************************************/
+/*                  NAVBAR                          */
+/****************************************************/
 #navbar h1 {
+  background : url(../img/apiculture-banner.png) right no-repeat;
   color : #d9aa37;
   font-size : 50px;
   padding : 50px;
@@ -12,30 +20,93 @@
   margin : 0;
 }
 
-#menu li {
-  display : inline;
-  /*padding : 0 5px;*/
-  border-right : 1px solid #000;
-  padding-right : 5px;
-}
 
-#menu li:nth-last-child(2), #menu li:last-child {
-  border-right : none;
-}
+/****************************************************/
+/*                    MENU                          */
+/****************************************************/
 
-#menu li.right {
-  float : right;
-  margin-right : 10px;
-}
-
-ul#menu{
-  list-style-type : none;
-  height : 40px;
-  font-size : 20px;
-  margin : 0;
+#navbar_menu {
   background-image:linear-gradient(to right, #d9aa37, #FFF);
-  line-height : 40px;
 }
+
+#navbar_menu ul {
+  height : 40px;
+}
+
+#navbar_menu ul li {
+  line-height : 40px;
+  font-size : 20px;
+  border-right : 1px solid #D3D3D3;
+  padding : 0 5px;
+}
+
+#navbar_menu ul li:nth-last-child(2), #navbar_menu ul li:last-child {
+  border-right : none;
+
+}
+
+#navbar_menu .right {
+  float : right;
+}
+
+#navbar_menu .right > a {
+  display : inline;
+}
+
+#navbar .legend_menu {
+  font-size : 20px;
+  line-height : 40px;
+  padding : 0 5px; 
+
+}
+
+
+
+/****************************************************/
+/*                  LOGIN                           */
+/****************************************************/
+
+#login .control-label {
+  text-align : center;
+}
+
+#login .btn.btn-info {
+  float : right;
+  margin-right : 15px;
+}
+
+
+/****************************************************/
+/*                  BOOTSTRAP                       */
+/****************************************************/
+
+.btn.btn-info {
+  background-image : none;
+  background-color : #d9aa37;
+  border-color : #d9aa37;
+  color : #000;
+}
+
+.navbar-nav {
+  float : none;
+}
+
+.navbar .icon-bar {
+  background-color : #000;
+}
+
+.navbar-toggle {
+  background-color : #d9aa37;
+}
+.navbar-header {
+  background-image:linear-gradient(to right, #d9aa37, #FFF);
+}
+
+
+
+/****************************************************/
+
+/****************************************************/
 
 #hiveid {
     display : none;
@@ -60,51 +131,26 @@ ul#menu{
 }
 
 
-.contenu {
-    margin-top : 70px;
-}
 
-h1 {
-    font-size : 1.8em;
-}
 
 body {
-    /*padding-top: 60px;*/
     padding-bottom: 40px;
 }
 
-.zf-green {
-    color: #68b604;
+@media only screen and (max-width: 605px) {
+  #navbar h1 {
+    color : #000;
+  }
 }
 
-.btn-success {
-  background-color: #57a900;
-  background-image: -moz-linear-gradient(top, #70d900, #57a900);
-  background-image: -ms-linear-gradient(top, #70d900, #57a900);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
-  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
-  background-image: -o-linear-gradient(top, #70d900, #57a900);
-  background-image: linear-gradient(top, #70d900, #57a900);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
-}
+@media only screen and (max-width: 330px) {
+  #navbar h1 {
+    padding : 50px 0;
+  }
 
-.btn-success:hover,
-.btn-success:active,
-.btn-success.active,
-.btn-success.disabled,
-.btn-success[disabled] {
-  background-color: #57a900;
-}
 
-.btn-success:active, .btn-success.active {
-  background-color: #57a900;
-}
 
-div.container a.brand {
-    background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
-    margin-left: 0;
-    padding: 8px 20px 12px 40px;
-}
+
 
 
 

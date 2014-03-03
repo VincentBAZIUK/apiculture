@@ -13,8 +13,8 @@ $form->setAttribute('method', 'post');
         <?php echo $this->formElementErrors($form->get('identity')) ?>
         <dd>
             <div class="form-group">
-                <label class="control-label col-sm-2 col-md-4"><?php echo $this->formLabel($form->get('identity')) ?></label>
-                <div class="col-sm-6 col-md-8">
+                <label class="control-label col-sm-3 col-md-3 col-lg-3"><?php echo $this->formLabel($form->get('identity')) ?></label>
+                <div class="col-sm-9 col-md-9 col-lg-9">
                     <?php $form->get('identity')->setAttribute('class','form-control')?>
                     <?php echo $this->formInput($form->get('identity')) ?>
                 </div>
@@ -23,8 +23,8 @@ $form->setAttribute('method', 'post');
         </dd>
         <dd>
             <div class="form-group">
-                <label class="control-label col-sm-2 col-md-4"><?php echo $this->formLabel($form->get('credential')) ?></label>
-                <div class="col-sm-6 col-md-8">
+                <label class="control-label col-sm-3 col-md-3 col-lg-3"><?php echo $this->formLabel($form->get('credential')) ?></label>
+                <div class="col-sm-9 col-md-9 col-lg-9">
                     <?php $form->get('credential')->setAttribute('class','form-control')?>
                     <?php echo $this->formInput($form->get('credential')) ?>
                 </div>
@@ -35,13 +35,12 @@ $form->setAttribute('method', 'post');
             <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
         <?php endif ?>
 
-        <?php $form->get('submit')->setAttribute('class','btn btn-info') ?>
-        <dd><?php echo $this->formButton($form->get('submit')) ?></dd>
+        <dd>
+            <div class="form-group">
+                <?php $form->get('submit')->setAttribute('class','btn btn-info') ?>
+                <?php echo $this->formButton($form->get('submit')) ?>
+            </div>
+        </dd>
         
     </dl>
-
-<?php echo $this->form()->closeTag() ?>
-
-<?php if ($this->enableRegistration) : ?>
-Not registered? <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>">Sign up!</a>
-<?php endif; ?>
+Pas encore inscrit ? <a href="<?php echo $this->url('zfcuser/register'); ?>"><?php echo $this->translate('Inscris toi') ?></a>

@@ -6,6 +6,9 @@ namespace Apiculture\Entity;
 use Apiculture\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Entity;
+use Zend\InputFilter\InputFilter;
+use Zend\InputFilter\InputFilterAwareInterface;
+use Zend\InputFilter\InputFilterInterface;
 
 /**
  * @ORM\Table(name="hive")
@@ -97,8 +100,8 @@ class Hive {
         $this->user = $user;
     }
 
-
-
-    
-    
+    public function getArrayCopy()
+    {
+        return get_object_vars($this);
+    }
 }
