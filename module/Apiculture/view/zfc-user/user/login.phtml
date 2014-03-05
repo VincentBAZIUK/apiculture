@@ -1,46 +1,56 @@
-<h3 class="text-center" >Connectez vous !</h3>
+<div id="main" class="thumbnail col-lg-12 col-sm-12 col-xs-12">
+    <div id="login" class="jumbotron col-lg-6 col-xs-12 col-sm-12">
+      <h3 class="text-center" >Connectez vous !</h3>
+      <?php
+      $form = $this->loginForm;
+      $form->prepare();
+      $form->setAttribute('action', $this->url('zfcuser/login'));
+      $form->setAttribute('method', 'post');
+      $form->setAttribute('id','loginForm');
+      ?>
 
-<?php
-$form = $this->loginForm;
-$form->prepare();
-$form->setAttribute('action', $this->url('zfcuser/login'));
-$form->setAttribute('method', 'post');
-?>
+      <?php echo $this->form()->openTag($form) ?>
+          <dl class="zend-form form-horizontal">
+              <?php echo $this->formElementErrors($form->get('identity')) ?>
+              <dd>
+                  <div class="form-group">
+                      <label class="control-label col-sm-3 col-lg-3 col-xs-3"><?php echo $this->formLabel($form->get('identity')) ?></label>
+                      <div class="col-sm-9 col-lg-9 col-xs-9">
+                          <?php $form->get('identity')->setAttribute('class','form-control')?>
+                          <?php echo $this->formInput($form->get('identity')) ?>
+                      </div>
+                  </div>
 
-<?php echo $this->form()->openTag($form) ?>
+              </dd>
+              <dd>
+                  <div class="form-group">
+                      <label class="control-label col-sm-3 col-x-3 col-lg-3"><?php echo $this->formLabel($form->get('credential')) ?></label>
+                      <div class="col-sm-9 col-xs-9 col-lg-9">
+                          <?php $form->get('credential')->setAttribute('class','form-control')?>
+                          <?php echo $this->formInput($form->get('credential')) ?>
+                      </div>
+                  </div>
 
-    <dl class="zend-form form-horizontal">
-        <?php echo $this->formElementErrors($form->get('identity')) ?>
-        <dd>
-            <div class="form-group">
-                <label class="control-label col-sm-3 col-md-3 col-lg-3"><?php echo $this->formLabel($form->get('identity')) ?></label>
-                <div class="col-sm-9 col-md-9 col-lg-9">
-                    <?php $form->get('identity')->setAttribute('class','form-control')?>
-                    <?php echo $this->formInput($form->get('identity')) ?>
-                </div>
-            </div>
-                    
-        </dd>
-        <dd>
-            <div class="form-group">
-                <label class="control-label col-sm-3 col-md-3 col-lg-3"><?php echo $this->formLabel($form->get('credential')) ?></label>
-                <div class="col-sm-9 col-md-9 col-lg-9">
-                    <?php $form->get('credential')->setAttribute('class','form-control')?>
-                    <?php echo $this->formInput($form->get('credential')) ?>
-                </div>
-            </div>
-                    
-        </dd>
-        <?php if ($this->redirect): ?>
-            <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
-        <?php endif ?>
+              </dd>
+              <?php if ($this->redirect): ?>
+                  <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
+              <?php endif ?>
 
-        <dd>
-            <div class="form-group">
-                <?php $form->get('submit')->setAttribute('class','btn btn-info') ?>
-                <?php echo $this->formButton($form->get('submit')) ?>
-            </div>
-        </dd>
-        
-    </dl>
-Pas encore inscrit ? <a href="<?php echo $this->url('zfcuser/register'); ?>"><?php echo $this->translate('Inscris toi') ?></a>
+              <dd>
+                  <div class="form-group">
+                      <?php $form->get('submit')->setAttribute('class','btn btn-info') ?>
+                      <?php echo $this->formButton($form->get('submit')) ?>
+                  </div>
+              </dd>
+
+          </dl>
+      Pas encore inscrit ? <a href="<?php echo $this->url('zfcuser/register'); ?>"><?php echo $this->translate('Inscris toi') ?></a>
+    </div>
+    <div id="info" class="col-lg-6 col-sm-6 col-xs-12">
+        <h2 class="text-center">Gère tes ruches !</h2>
+        <p class="text-center">Bienvenue sur le site d'apiculture. En te créant un compte tu auras accès à ton espace personnel dans lequel tu pourras gérer tes ruches, tes récoltes...</p>
+        <div class="row text-center">
+            <img class="" src="../../../../img/miel.png" alt="Miel" height="200" width="150">
+        </div>
+    </div>
+</div>

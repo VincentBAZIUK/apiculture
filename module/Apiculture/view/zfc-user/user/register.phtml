@@ -1,46 +1,45 @@
-<div class="contenu row thumbnail col-sm-6 col-md-12">
-    <div class="jumbotron col-sm-4 col-md-6">
+<div id="main" class="thumbnail col-sm-12 col-lg-12 col-xs-12">
+    <div id="register" class="jumbotron col-sm-12 col-xs-12 col-lg-6">
     <h3 class="text-center">Inscrivez-vous</h3>
+    <?php
+    if (!$this->enableRegistration) {
+        print "Registration is disabled";
+        return;
+    }
+    $form = $this->registerForm;
+    $form->prepare();
+    $form->setAttribute('action', $this->url('zfcuser/register'));
+    $form->setAttribute('method', 'post');
+    $form->setAttribute('id','registerForm');
+    ?>
 
+    <?php echo $this->form()->openTag($form) ?>
+        <dl class="zend-form form-horizontal">
+        <?php foreach ($form as $element): ?>
+            <div class="form-group">
+            <?php if (!$element instanceof Zend\Form\Element\Button): ?>
+                <label class="control-label col-sm-3 col-xs-3 col-lg-3"><?php echo $this->formLabel($element) ?>
+                </label>
+            <?php endif ?>
+            <?php if ($element instanceof Zend\Form\Element\Button): ?>
+                <?php $element->setAttribute('class','btn btn-info'); ?>
+                <dd><?php echo $this->formButton($element) ?></dd>
+            <?php elseif ($element instanceof Zend\Form\Element\Captcha): ?>
+                <dd><?php echo $this->formCaptcha($element) . $this->formElementErrors($element) ?></dd>
+            <?php else: ?>
+                <dd class="col-sm-9 col-xs-9 col-lg-9"><?php $element->setAttribute('class','form-control'); echo $this->formInput($element) . $this->formElementErrors($element) ?></dd>
+            <?php endif ?>
+            </div>
+        <?php endforeach ?>
+        </dl>
 
-<?php
-if (!$this->enableRegistration) {
-    print "Registration is disabled";
-    return;
-}
-$form = $this->registerForm;
-$form->prepare();
-$form->setAttribute('action', $this->url('zfcuser/register'));
-$form->setAttribute('method', 'post');
-?>
-
-<?php echo $this->form()->openTag($form) ?>
-    <dl class="zend-form form-horizontal">
-    <?php foreach ($form as $element): ?>
-        <div class="form-group">
-        <?php if (!$element instanceof Zend\Form\Element\Button): ?>
-            <label class="control-label col-sm-3 col-md-3 col-lg-3"><?php echo $this->formLabel($element) ?>
-            </label>
-        <?php endif ?>
-        <?php if ($element instanceof Zend\Form\Element\Button): ?>
-            <?php $element->setAttribute('class','btn btn-info'); ?>
-            <dd><?php echo $this->formButton($element) ?></dd>
-        <?php elseif ($element instanceof Zend\Form\Element\Captcha): ?>
-            <dd><?php echo $this->formCaptcha($element) . $this->formElementErrors($element) ?></dd>
-        <?php else: ?>
-            <dd class="col-sm-9 col-md-9 col-lg-9"><?php $element->setAttribute('class','form-control'); echo $this->formInput($element) . $this->formElementErrors($element) ?></dd>
-        <?php endif ?>
-        </div>    
-    <?php endforeach ?>
-    </dl>
-
-<?php echo $this->form()->closeTag() ?>
-    </div>
-    <div class="col-md-6">
-        <h2 class="text-center">Gère tes ruches !</h2>
-        <p class="text-center">Bienvenue sur le site d'apiculture. Ici, tu peux gérer tes ruches et tes récoltes.<br/> Si tu n'as pas encore de compte inscris toi !</p>
-        <div class="row text-center">
-            <img class="" src="../../../../img/miel.png" alt="Miel" height="200" width="150"> 
+    <?php echo $this->form()->closeTag() ?>
+        </div>
+        <div id="info" class="col-lg-6 col-sm-6 col-xs-12">
+            <h2 class="text-center">Gère tes ruches !</h2>
+            <p class="text-center">Bienvenue sur le site d'apiculture. Ici, tu peux gérer tes ruches et tes récoltes.<br/> Si tu n'as pas encore de compte inscris toi !</p>
+            <div class="row text-center">
+                <img class="" src="../../../../img/miel.png" alt="Miel" height="200" width="150">
+            </div>
         </div>
     </div>
-</div>
