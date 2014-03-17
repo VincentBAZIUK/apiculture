@@ -1,41 +1,104 @@
-<h1>Ajout d'une rûche ! </h1>
 <?php
     $form = $this->form;
     $form->setAttribute('action', $this->url('add', array('action' => 'addhive')));
+    $form->setAttribute('id','addHive');
     $form->prepare();
     echo $this->form()->openTag($form);
 ?>
+<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Ajouter une r&ucirc;che</h4>
+      </div>
+      <div class="modal-body">
+        <dl class="zend-form form-horizontal">
+        <dd>
+          <div class="form-group">
+              <label class="control-label col-sm-3 col-lg-3 col-xs-3"><?php echo $this->formLabel($form->get('name')) ?></label>
+              <div class="col-sm-9 col-lg-9 col-xs-9">
+                  <?php $form->get('name')->setAttribute('class','form-control')?>
+                  <?php echo $this->formInput($form->get('name')) ?>
+              </div>
+          </div>
+        </dd>
+        <dd>
+          <div class="error longitude col-sm-offset-3 col-xs-offset-3 col-lg-offset-3" style="display:none"></div>
+          <div class="form-group">
+              <label class="control-label col-sm-3 col-lg-3 col-xs-3"><?php echo $this->formLabel($form->get('longitude')) ?></label>
+              <div class="col-sm-9 col-lg-9 col-xs-9">
+                  <?php $form->get('longitude')->setAttribute('class','form-control')?>
+                  <?php echo $this->formInput($form->get('longitude')) ?>
+              </div>
+          </div>
+        </dd>
+        <dd>
+          <div class="error latitude col-sm-offset-3 col-xs-offset-3 col-lg-offset-3" style="display:none"></div>
+          <div class="form-group">
+              <label class="control-label col-sm-3 col-lg-3 col-xs-3"><?php echo $this->formLabel($form->get('latitude')) ?></label>
+              <div class="col-sm-9 col-lg-9 col-xs-9">
+                  <?php $form->get('latitude')->setAttribute('class','form-control')?>
+                  <?php echo $this->formInput($form->get('latitude')) ?>
+              </div>
+          </div>
+        </dd>
 
-<table class="zend_form">
-    <tr>
-        <td>
-            <?php echo $this->formRow($form->get('name'));?>
-        </td>
-    </tr>
-    
-    <!--<tr>
-        <td><?php echo $this->formLabel($form->get('latitude')); ?></td>
-        <td><?php echo $this->formInput($form->get('latitude'));
-            echo $this->formElementErrors($form->get('latitude'));?></td>
-    </tr>-->
-            
-    <tr>
-        <td>
-            <?php echo $this->formRow($form->get('longitude')); ?>
-        </td>
-    </tr>
-    
-        <tr>
-        <td>
-            <?php echo $this->formRow($form->get('latitude')); ?>
-        </td>
-    </tr>
-    
-    <tr>
-        <td>
-            <?php echo $this->formRow($form->get('submit')); ?>
-        </td>
-    </tr>
-</table>
 
+
+
+            <!--<tr>
+                <td><?php echo $this->formLabel($form->get('latitude')); ?></td>
+                <td><?php echo $this->formInput($form->get('latitude'));
+                    echo $this->formElementErrors($form->get('latitude'));?></td>
+            </tr>-->
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        <span style="display : none;" id="url"><?php echo $this->url('checkAddHive'); ?></span>
+        <?php echo $this->formRow($form->get('submitAddHive')); ?>
+      </div>
+    </div>
+  </div>
+</div>
 <?php echo $this->form()->closeTag($form); ?>
+
+<script>
+  $('input[name=submitAddHive]').click(function(event) {
+    $('div.error').empty();
+    event.preventDefault();
+    var latitude = $('input[name=latitude]').val();
+    var longitude = $('input[name=longitude]').val();
+    $.ajax({
+      url : $('#url').html(),
+      dataType : 'json',
+      type : 'POST',
+      data : {
+        'latitude' : $('input[name=latitude]').val(),
+        'longitude' : $('input[name=longitude]').val(),
+        }
+
+    }).success(function(response){
+      if (response.length != 0) {
+        for (var error in response) {
+          if (error == 'latitude')
+            $('div.error.latitude').html(response[error]);
+          if (error == 'longitude')
+            $('div.error.longitude').html(response[error]);
+          }
+        }
+
+          if ($('div.error.latitude').html() != '')
+            $('div.error.latitude').show();
+          if ($('div.error.longitude').html() != '' )
+            $('div.error.longitude').show();
+
+          if ($('div.error').html() == '')
+            $('#addHive').submit();
+
+
+  });
+});
+</script>

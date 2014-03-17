@@ -15,7 +15,7 @@ return array(
             ),
         ),
     ),
-  
+
 
     'zfcuser' => array(
         // telling ZfcUser to use our own class

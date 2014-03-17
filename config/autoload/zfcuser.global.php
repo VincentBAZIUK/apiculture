@@ -153,7 +153,7 @@ $settings = array(
      * Accepted values: A valid route name within your application
      *
      */
-    'login_redirect_route' => 'connected',
+    'login_redirect_route' => 'dashboard',
 
     /**
      * Logout Redirect Route
@@ -194,7 +194,7 @@ $settings = array(
      * Should user's state be used in the registration/login process?
      */
     //'enable_user_state' => true,
-    
+
     /**
      * Default user state upon registration
      *
@@ -202,7 +202,7 @@ $settings = array(
      * Allowed value type: integer
      */
     //'default_user_state' => 1,
-    
+
     /**
      * States which are allowing user to login
      *
@@ -211,12 +211,12 @@ $settings = array(
      * Allowed value types: null and integer
      */
     //'allowed_login_states' => array( null, 1 ),
-    
+
     /**
      * User table name
      */
     //'table_name' => 'user',
-    
+
     /**
      * End of ZfcUser configuration
      */

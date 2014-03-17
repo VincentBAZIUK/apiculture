@@ -20,13 +20,13 @@ return array(
                     ),
                 ),
             ),
-            'connected' => array(
+            'dashboard' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
-                    'route'    => '/connected',
+                    'route'    => '/dashboard',
                     'defaults' => array(
                         'controller' => 'Apiculture\Controller\Apiculture',
-                        'action'     => 'index',
+                        'action'     => 'dashboard',
                     ),
                 ),
             ),
@@ -56,20 +56,6 @@ return array(
                     ),
                 ),
             ),
-
-            /*'delete' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route'    => '/delete[/:id]',
-                    'defaults' => array(
-                        'controller' => 'Apiculture\Controller\Apiculture',
-                        'action'     => 'deletehive',
-                        'constraints' => array(
-                           'id' => '[0-9]+',
-                        ),
-                    ),
-                ),
-            ),*/
             'add' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -77,6 +63,16 @@ return array(
                     'defaults' => array(
                         'controller' => 'Apiculture\Controller\Apiculture',
                         'action'     => 'addhive',
+                    ),
+                ),
+            ),
+            'checkAddHive' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/dashboard/checkAddHive',
+                    'defaults' => array(
+                        'controller' => 'Apiculture\Controller\Apiculture',
+                        'action'     => 'checkaddhive',
                     ),
                 ),
             ),
