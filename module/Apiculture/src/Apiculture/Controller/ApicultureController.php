@@ -102,7 +102,7 @@ class ApicultureController extends AbstractActionController
         $em->remove($hive);
         $em->flush();
 
-        return $this->redirect()->toRoute('connected');
+        return $this->redirect()->toRoute('dashboard');
 
     }
 

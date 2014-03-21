@@ -2,10 +2,34 @@
 /*                  MAIN                            */
 /****************************************************/
 #main {
-  margin-top : 35px;
+  margin-top : 0;
   overflow : auto;
   display : block;
 }
+
+#content {
+  max-width : 980px;
+  padding : 0;
+  margin : 10px auto;
+  border : 1px solid #CECECE;
+  box-shadow : 0 0 15px 0 #D0D0D0;
+}
+
+#info {
+  text-align : center;
+
+}
+
+body {
+  font-family: "Helvetica";
+  font-size : 18px;
+}
+
+.container {
+  margin-bottom : 20px;
+}
+
+
 
 
 /****************************************************/
@@ -16,9 +40,10 @@
   color : #d9aa37;
   font-size : 50px;
   padding : 50px;
-  height : 200px;
+  height : 170px;
   margin : 0;
 }
+
 
 
 /****************************************************/
@@ -37,7 +62,8 @@ div.error.latitude, div.error.longitude {
 /****************************************************/
 
 #navbar_menu {
-  background-image:linear-gradient(to right, #d9aa37, #FFF);
+  background-color : #d9aa37;
+  color : #FFF;
 }
 
 #navbar_menu ul {
@@ -47,13 +73,7 @@ div.error.latitude, div.error.longitude {
 #navbar_menu ul li {
   line-height : 40px;
   font-size : 20px;
-  border-right : 1px solid #D3D3D3;
   padding : 0 5px;
-}
-
-#navbar_menu ul li:nth-last-child(2), #navbar_menu ul li:last-child {
-  border-right : none;
-
 }
 
 #navbar_menu .right {
@@ -105,26 +125,49 @@ div.error.latitude, div.error.longitude {
   color : #000;
 }
 
+.navbar {
+  box-shadow : none;
+}
+
 .navbar-nav {
   float : none;
 }
 
 .navbar .icon-bar {
-  background-color : #000;
+  background-color : #FFF;
 }
 
 .navbar-toggle {
   background-color : #d9aa37;
 }
 .navbar-header {
-  background-image:linear-gradient(to right, #d9aa37, #FFF);
+  background-color : #d9aa37;
+  color : #FFF;
+  height : 40px;
 }
 
 .jumbotron {
   margin-bottom : 0;
 }
 
+.navbar-toggle {
+  margin : 4px;
+  padding : 8px;
+  border : 1px solid #FFF;
+}
 
+a {
+  color : #818DCA;
+}
+
+a:hover {
+  color : #344394;
+  text-decoration : none;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background : none;
+}
 
 /****************************************************/
 
@@ -148,20 +191,15 @@ div.error.latitude, div.error.longitude {
     width : 600px;
 }
 
-#list-hives h2 {
-    font-size : 1em;
-}
 
-
-
-
-body {
-    padding-bottom: 40px;
-}
 
 @media only screen and (max-width: 605px) {
   #navbar h1 {
     color : #000;
+  }
+
+  #login .control-label {
+    padding-left : 0;
   }
 }
 
@@ -169,3 +207,8 @@ body {
   #navbar h1 {
     padding : 50px 0;
   }
+
+#login .control-label {
+    padding-left : 0;
+  }
+}
