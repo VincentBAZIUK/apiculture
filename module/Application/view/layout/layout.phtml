@@ -48,9 +48,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar_menu">
       <ul class="nav navbar-nav">
-       <li>Accueil</li>
-        <li>Mon compte</li>
-        <li>Dashboard</li>
+        <li><a href="<?php echo $this->url('home')?>">Accueil</a></li>
+        <li><a <?php if(!$this->zfcUserIdentity()) echo 'class=access_denied data-toggle=tooltip data-placement=top title=Connectez-vous href=#'; else echo 'href='.$this->url('home');?>>Mon compte</a></li>
+        <li><a <?php if(!$this->zfcUserIdentity()) echo 'class=access_denied data-toggle=tooltip data-placement=top title=Connectez-vous href=#'; else echo 'href='.$this->url('dashboard');?>>Dashboard</a></li>
         <li class="right">Pas encore inscrit ?
             <a href="<?php echo $this->url('zfcuser/register'); ?>"><?php echo $this->translate('Register') ?>
             </a>
@@ -73,3 +73,4 @@
 </div>
 </body>
 </html>
+
