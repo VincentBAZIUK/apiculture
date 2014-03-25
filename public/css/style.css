@@ -126,6 +126,55 @@ a.access_denied:hover{
 }
 
 
+/****************************************************/
+/*                  DASHBOARD                       */
+/****************************************************/
+
+h3.dashboard_title {
+    text-align : center;
+    margin-top : 0;
+}
+
+div.btn_add_hive {
+    float : right;
+    margin : 0 auto;
+}
+
+#map {
+    overflow : auto;
+}
+
+#hiveid {
+    display : none;
+}
+
+#list-hives {
+    padding : 0;
+}
+
+#list-hives ul {
+    list-style-type : none;
+    padding-left : 10px;
+}
+
+#list-hives ul li {
+    float : left;
+    margin : 3px 0;
+}
+
+#list-hives div.content_hive_list {
+    border-bottom : 1px solid #CECECE;
+    overflow : auto;
+}
+
+#list-hives ul a {
+    float : right;
+    margin : 2px;
+}
+
+#list-hives > h4 {
+    font-size : 16px;
+}
 
 
 /****************************************************/
@@ -134,9 +183,9 @@ a.access_denied:hover{
 
 .btn.btn-info {
   background-image : none;
-  background-color : #d9aa37;
-  border-color : #d9aa37;
-  color : #000;
+  background-color : #818DCA;
+  border-color : #818DCA;
+  color : #FFF;
 }
 
 .navbar {
@@ -189,29 +238,14 @@ a:hover {
     width : 200px;
 }
 
+.modal-title {
+    text-align : center;
+    color : #d9aa37;
+}
+
 /****************************************************/
-
+/*              RESPONSIVE MEDIA QUERIES            */
 /****************************************************/
-
-#hiveid {
-    display : none;
-}
-
-#list-hives {
-    float : left;
-    margin-right : 10px;
-}
-
-
-
-#map {
-    border-left : 1px solid black;
-    overflow : auto;
-    padding-left : 10px;
-    width : 600px;
-}
-
-
 
 @media only screen and (max-width: 605px) {
   #navbar h1 {
@@ -220,6 +254,10 @@ a:hover {
 
   #login .control-label {
     padding-left : 0;
+  }
+
+  #map {
+    padding : 0;
   }
 }
 
@@ -231,4 +269,6 @@ a:hover {
 #login .control-label {
     padding-left : 0;
   }
+
+
 }

@@ -1,27 +1,29 @@
 <?php include_once 'addhive.phtml'; ?>
-<h1>Bienvenue <?php echo $user->getEmail() ?></h1>
-<button class-"btn btn-info" data-toggle="modal" data-target="#modalAdd">Ajouter une ruche</button>
-<a href="<?php echo $this->url('add',array('action'=>'addHive'))?>">Ajouter une ruche</a>
-<div id="list-hives">
-    <h2>Liste de vos rûches</h2>
-    <ul>
-        <?php
+<?php $username = substr($this->zfcUserIdentity()->getEmail(),0,strpos($this->zfcUserIdentity()->getEmail(),'@')); ?>
+<h3 class="dashboard_title">Bienvenue <?php echo $username ?></h3>
+<?php if (sizeof($hives) > 0) { ?>
+    <div id="list-hives" class="col-sm-2 col-xs-12">
+        <h4>Liste de vos rûches</h4>
+        <ul>
+            <?php
             for ($i=0;$i<sizeof($hives);$i++) {
-                echo "<li id=".$hives[$i]->getId().">".$hives[$i]->getName()."</li>";?>
-                    <a class="idHiveDelete" href="<?php echo $this->url('delete',array('action'=>'deletehive', 'id'=>$hives[$i]->getId()))?>">
-                        <span id="<?php echo $hives[$i]->getId(); ?>" class="glyphicon glyphicon-remove-circle idHiveDelete" data-toggle="modal" data-target="#myModalDelete"></span>
-                    </a>
-                    <a class="idHiveUpdate" href="<?php echo $this->url('update',array('action'=>'updatehive', 'id'=>$hives[$i]->getId()))?>">
-                        <span id="<?php echo $hives[$i]->getId(); ?>" class="glyphicon glyphicon-pencil idHiveDelete" data-toggle="modal" data-target="#myModalUpdate"></span>
-                    </a>
+                echo "<div class=content_hive_list><li id=".$hives[$i]->getId().">".$hives[$i]->getName()."</li>";?>
+                <a class="idHiveDelete" title="Supprimer" href="<?php echo $this->url('delete',array('action'=>'deletehive', 'id'=>$hives[$i]->getId()))?>">
+                    <span id="<?php echo $hives[$i]->getId(); ?>" class="glyphicon glyphicon-remove-circle idHiveDelete" data-toggle="modal" data-target="#myModalDelete"></span>
+                </a>
+                <a class="idHiveUpdate" title="Modifier" href="<?php echo $this->url('update',array('action'=>'updatehive', 'id'=>$hives[$i]->getId()))?>">
+                    <span id="<?php echo $hives[$i]->getId(); ?>" class="glyphicon glyphicon-pencil idHiveDelete" data-toggle="modal" data-target="#myModalUpdate"></span>
+                </a></div>
 
 
             <?php }?>
-    </ul>
-</div>
-<div id="map">
+        </ul>
+    </div>
+<?php } ?>
+<div id="map" class="col-sm-8 col-xs-12<?php if (sizeof($hives) == 0) echo ' col-sm-offset-1'?>">
     <?php echo $mapHelper->render($map); ?>
 </div>
+<div class="btn_add_hive col-sm-2"><button class="btn btn-info" data-toggle="modal" data-target="#modalAdd">Ajouter une ruche</button></div>
 <div class="modal fade" id="myModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
