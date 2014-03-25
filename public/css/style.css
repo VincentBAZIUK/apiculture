@@ -118,6 +118,13 @@ a.access_denied:hover{
     color : #B94A48;
 }
 
+#login .ploginconnected {
+    font-size : 16px;
+    font-weight : normal;
+    padding : 0 15px;
+    text-align : center;
+}
+
 
 
 
@@ -155,6 +162,7 @@ a.access_denied:hover{
 
 .jumbotron {
   margin-bottom : 0;
+    padding : 0;
 }
 
 .navbar-toggle {
@@ -174,6 +182,11 @@ a:hover {
 
 .nav > li > a:hover, .nav > li > a:focus {
   background : none;
+}
+
+.img-circle {
+    height : 200px;
+    width : 200px;
 }
 
 /****************************************************/
