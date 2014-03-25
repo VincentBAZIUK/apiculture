@@ -51,10 +51,17 @@
         <li><a href="<?php echo $this->url('home')?>">Accueil</a></li>
         <li><a <?php if(!$this->zfcUserIdentity()) echo 'class=access_denied data-toggle=tooltip data-placement=top title=Connectez-vous href=#'; else echo 'href='.$this->url('home');?>>Mon compte</a></li>
         <li><a <?php if(!$this->zfcUserIdentity()) echo 'class=access_denied data-toggle=tooltip data-placement=top title=Connectez-vous href=#'; else echo 'href='.$this->url('dashboard');?>>Dashboard</a></li>
-        <li class="right">Pas encore inscrit ?
-            <a href="<?php echo $this->url('zfcuser/register'); ?>"><?php echo $this->translate('Register') ?>
-            </a>
-        </li>
+        <!--<li class="right"><?php if ($this->zfcUserIdentity()) echo 'Bonjour '.$this->zfcUserIdentity()->getEmail(); else echo 'Pas encore inscrit ?';?>
+            <a href="<?php echo $this->url('zfcuser/register'); ?>"><?php echo $this->translate('Register') ?></a>
+        </li>-->
+        <?php $string = '<li class="right">Pas encore inscrit ? <a href='.$this->url('zfcuser/register').'>Inscris toi</a></li>'; ?>
+        <?php
+            if (!$this->zfcUserIdentity())
+                echo $string;
+            else {
+                //$username = substr($this->zfcUserIdentity()->getEmail(),0,strpos($this->zfcUserIdentity()->getEmail(),'@'));
+                echo '<li class="right"><a href='.$this->url('zfcuser/logout').'>Deconnexion</a></li>';
+            } ?>
       </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
@@ -73,4 +80,7 @@
 </div>
 </body>
 </html>
+<script>
+    $('.access_denied').tooltip();
+</script>
 

@@ -78,6 +78,7 @@ div.error.latitude, div.error.longitude {
 
 #navbar_menu .right {
   float : right;
+  line-height : 50px;
 }
 
 #navbar_menu .right > a {
