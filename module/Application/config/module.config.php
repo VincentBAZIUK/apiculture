@@ -57,12 +57,12 @@ return array(
                 ),
             ),
             'add' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'type' => 'segment',
                 'options' => array(
-                    'route'    => '/add',
+                    'route' => '/add[/:action]',
                     'defaults' => array(
                         'controller' => 'Apiculture\Controller\Apiculture',
-                        'action'     => 'addhive',
+                        'action' => 'index',
                     ),
                 ),
             ),

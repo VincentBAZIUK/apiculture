@@ -3,11 +3,14 @@
 Namespace Apiculture\Controller;
 
 use Apiculture\Entity\Hive;
+use Apiculture\Entity\Intervention;
 use Apiculture\Form\UpdateForm;
 use Apiculture\Form\ApicultureAddForm;
+use Apiculture\Form\ApicultureInterventionForm;
 use Ivory\GoogleMap\Helper\MapHelper;
 use DoctrineModule\Stdlib\Hydrator\DoctrineObject;
 use Ivory\GoogleMap\Map;
+use Ivory\GoogleMap\Overlays\InfoWindow;
 use Ivory\GoogleMap\Overlays\Marker;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
@@ -34,15 +37,33 @@ class ApicultureController extends AbstractActionController
             if (!empty($results)) {
                 for ($i=0;$i<sizeof($results);$i++) {
                     $marker = new Marker();
+                    $marker->setOption('class','marker');
+                    $infoWindow = new InfoWindow();
+                    $javascript_content = "$('div.hidden').removeClass('hidden')";
+                    //$javascript_content = "$('.content_javascript_hive').html(".'$results[$i]->getName()'.")";
+                    //$javascript_content = "alert('test')";
+                    $infoWindow->setContent("
+                        <div id='content_infoWindow'>
+                        <div id=javascript_content style='display : none'>$javascript_content</div>
+                        <h4 class='hive_name text-center'>".$results[$i]->getName()."</h4>
+                        <p class='hive_longitude'>Longitude : ".$results[$i]->getLongitude()."</p>
+                        <p class='hive_latitude'>Latitude : ".$results[$i]->getLatitude()."</p>
+                        <button id='manage_hive' class='btn btn-info' data-toggle='modal' data-target='#modalIntervention'>Consulter les interventions</button>
+                        </div>
+                        ");
+                    $infoWindow->setAutoClose(true);
                     $marker->setPosition($results[$i]->getLatitude(),$results[$i]->getLongitude(),true);
+                    $marker->setInfoWindow($infoWindow);
                     $map->addMarker($marker);
                     }
             }
 
         $form = new ApicultureAddForm($em);
+        $formIntervention = new ApicultureInterventionForm($em);
 
          return new ViewModel(array('map' => $map,
                                     'form' => $form,
+                                    'formIntervention' => $formIntervention,
                                     'mapHelper' => $mapHelper,
                                     'hives' => $results,
                                     'user' => $this->zfcUserAuthentication()->getIdentity()));
@@ -77,6 +98,29 @@ class ApicultureController extends AbstractActionController
             }
         }
         return new ViewModel(array('form'=>$form));
+    }
+
+    public function addinterventionAction()
+    {
+        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+        $formIntervention = new ApicultureInterventionForm($em);
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $intervention = new Intervention();
+            $formIntervention->setData($request->getPost());
+            if ($formIntervention->isValid()) {
+                $datas = $formIntervention->getData();
+                $intervention->setDescription($datas['description']);
+                $intervention->setDate($datas['date']);
+                $em->persist($intervention);
+                $em->flush();
+
+                return $this->redirect()->toRoute('dashboard');
+            }
+        }
+
+        return new ViewModel(array('formIntervention' => $formIntervention));
+
     }
 
     public function checkaddhiveAction()

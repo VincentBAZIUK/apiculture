@@ -1,0 +1,62 @@
+<?php
+$form = $this->formIntervention;
+$form->setAttribute('action', $this->url('add', array('action' => 'addintervention')));
+$form->setAttribute('id','addIntervnetion');
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+<div class="modal fade" id="modalIntervention" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Ajouter une intervention</h4>
+            </div>
+            <div class="modal-body">
+                <dl class="zend-form form-horizontal">
+                    <dd>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-lg-3 col-xs-3"><?php echo $this->formLabel($form->get('description')) ?></label>
+                            <div class="col-sm-9 col-lg-9 col-xs-9">
+                                <?php $form->get('description')->setAttribute('class','form-control')?>
+                                <?php echo $this->formInput($form->get('description')) ?>
+                            </div>
+                        </div>
+                    </dd>
+                    <dd>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-lg-3 col-xs-3"><?php echo $this->formLabel($form->get('date')) ?></label>
+                            <div class="col-sm-9 col-lg-9 col-xs-9">
+                                <?php $form->get('date')->setAttribute('class','form-control')?>
+                                <?php echo $this->formInput($form->get('date')) ?>
+                            </div>
+                        </div>
+                    </dd>
+
+
+
+
+
+                    <!--<tr>
+                <td><?php echo $this->formLabel($form->get('description')); ?></td>
+                <td><?php echo $this->formInput($form->get('description'));
+                    echo $this->formElementErrors($form->get('description'));?></td>
+            </tr>-->
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                <?php echo $this->formRow($form->get('submitAddIntervention')); ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo $this->form()->closeTag($form); ?>
+
+<script>
+    $(function()
+    {
+        $( ".datepicker" ).datepicker();
+    });
+</script>

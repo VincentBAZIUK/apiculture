@@ -167,6 +167,10 @@ div.btn_add_hive {
     overflow : auto;
 }
 
+#list-hives div.content_hive_list.last {
+    border-bottom : none;
+}
+
 #list-hives ul a {
     float : right;
     margin : 2px;
@@ -174,6 +178,18 @@ div.btn_add_hive {
 
 #list-hives > h4 {
     font-size : 16px;
+}
+
+div.content_javascript_hive {
+    margin : 20px auto 0;
+    border : 1px solid #CECECE;
+    border-radius : 3px;
+    box-shadow : 0 0 15px 0 #D0D0D0;
+}
+
+#manage_hive {
+    width : 125px;
+    overflow : hidden;
 }
 
 
