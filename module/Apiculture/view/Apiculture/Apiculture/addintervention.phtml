@@ -1,11 +1,11 @@
 <?php
 $form = $this->formIntervention;
-$form->setAttribute('action', $this->url('add', array('action' => 'addintervention')));
-$form->setAttribute('id','addIntervnetion');
+$form->setAttribute('action', $this->url('add', array('action' => 'addintervention','id_hive' => )));
+$form->setAttribute('id','addIntervention');
 $form->prepare();
 echo $this->form()->openTag($form);
 ?>
-<div class="modal fade" id="modalIntervention" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalAddIntervention" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -14,6 +14,13 @@ echo $this->form()->openTag($form);
             </div>
             <div class="modal-body">
                 <dl class="zend-form form-horizontal">
+                    <dd>
+                        <div class="form-group">
+                            <div class="col-sm-9 col-lg-9 col-xs-9">
+                                <?php echo $this->formHidden($form->get('id_hive')) ?>
+                            </div>
+                        </div>
+                    </dd>
                     <dd>
                         <div class="form-group">
                             <label class="control-label col-sm-3 col-lg-3 col-xs-3"><?php echo $this->formLabel($form->get('description')) ?></label>
@@ -59,4 +66,9 @@ echo $this->form()->openTag($form);
     {
         $( ".datepicker" ).datepicker();
     });
+
+    $('.manage_hive').click(function()
+    {
+        $('')
+    })
 </script>

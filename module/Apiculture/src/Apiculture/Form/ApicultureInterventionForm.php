@@ -45,6 +45,11 @@ class  ApicultureInterventionForm extends Form
         ));
 
         $this->add(array(
+            'name' => 'id_hive',
+            'type' => 'Zend\Form\Element\Hidden',
+        ));
+
+        $this->add(array(
             'name' => 'submitAddIntervention',
             'type' => 'submit',
             'attributes' => array(

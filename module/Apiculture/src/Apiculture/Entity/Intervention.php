@@ -16,6 +16,21 @@ use Zend\InputFilter\InputFilterInterface;
  */
 class Intervention {
     /**
+     * @param int $idHive
+     */
+    public function setIdHive($idHive)
+    {
+        $this->idHive = $idHive;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdHive()
+    {
+        return $this->idHive;
+    }
+    /**
      * @var int
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -28,6 +43,28 @@ class Intervention {
      * @ORM\Column(type="string", length=255)
      */
     protected $description;
+
+    /**
+     * @var integer
+     * @ORM\Column(type="integer", length = 10)
+     */
+    protected $id_hive;
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id_hive;
+    }
 
     /**
      * @param string $description
@@ -65,6 +102,11 @@ class Intervention {
     public function getDate()
     {
         return $this->date;
+    }
+
+    public function getArrayCopy()
+    {
+        return get_object_vars($this);
     }
 
 
