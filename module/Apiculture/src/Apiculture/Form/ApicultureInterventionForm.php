@@ -33,7 +33,7 @@ class  ApicultureInterventionForm extends Form
 
         $this->add(array(
             'name' => 'date',
-            'type' => 'Zend\Form\Element\Text',
+            'type' => 'Zend\Form\Element\Date',
             'attributes' => array(
                 'placeholder' => 'Date',
                 'required' => 'required',

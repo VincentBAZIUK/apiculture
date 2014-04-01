@@ -12,12 +12,36 @@
             </ul>
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAddIntervention">Ajouter une intervention</button>
                 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
 <script>
+    $('#modalIntervention').on('show.bs.modal', function()
+    {
+        $('.list_interventions').empty();
+        $.ajax({
+            url : $('#url_intervention').html(),
+            dataType : 'json',
+            type : 'POST',
+            data : {
+                'id_hive' : $('.hive_name').attr('id')
+            }
+
+        }).success(function(response){
+            if (response.length != 0) {
+                var i =0;
+                for (var intervention in response) {
+                    i++;
+                    $('.list_interventions').append('<li class="border">'+response[intervention]['description']+ ' le ' + response[intervention]['date']+'</li>');
+                }
+            } else $('.list_interventions').append('<li>Il n\'y a pas d\'interventions sur cette ruche</li>');
+
+
+        });
+    });
 </script>
 
 

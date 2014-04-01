@@ -1,6 +1,6 @@
 <?php
 $form = $this->formIntervention;
-$form->setAttribute('action', $this->url('add', array('action' => 'addintervention','id_hive' => )));
+$form->setAttribute('action', $this->url('add', array('action' => 'addintervention')));
 $form->setAttribute('id','addIntervention');
 $form->prepare();
 echo $this->form()->openTag($form);
@@ -62,13 +62,5 @@ echo $this->form()->openTag($form);
 <?php echo $this->form()->closeTag($form); ?>
 
 <script>
-    $(function()
-    {
-        $( ".datepicker" ).datepicker();
-    });
 
-    $('.manage_hive').click(function()
-    {
-        $('')
-    })
 </script>

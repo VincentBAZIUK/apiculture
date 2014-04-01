@@ -30,8 +30,6 @@ body {
 }
 
 
-
-
 /****************************************************/
 /*                  NAVBAR                          */
 /****************************************************/
@@ -163,7 +161,7 @@ div.btn_add_hive {
 }
 
 #list-hives div.content_hive_list {
-    border-bottom : 1px solid #CECECE;
+    border-bottom : 1px solid #818DCA;
     overflow : auto;
 }
 
@@ -182,7 +180,7 @@ div.btn_add_hive {
 
 div.content_javascript_hive {
     margin : 20px auto 0;
-    border : 1px solid #CECECE;
+    border : 1px solid #818DCA;
     border-radius : 3px;
     box-shadow : 0 0 15px 0 #D0D0D0;
 }
@@ -191,6 +189,28 @@ div.content_javascript_hive {
     width : 125px;
     overflow : hidden;
 }
+
+
+/****************************************************/
+/*               MODAL INTERVENTION                 */
+/****************************************************/
+ul.list_interventions {
+    list-style-type : none;
+}
+
+ul.list_interventions li {
+    text-align : center;
+    padding : 5px 0;
+}
+
+ul.list_interventions li.border {
+    border-bottom : 1px solid #818DCA;
+}
+
+ul.list_interventions li:last-child {
+    border-bottom : none;
+}
+
 
 
 /****************************************************/
@@ -257,6 +277,19 @@ a:hover {
 .modal-title {
     text-align : center;
     color : #d9aa37;
+}
+
+.modal-body {
+    overflow : auto;
+}
+
+.modal-header {
+    border-bottom : 1px solid #818DCA;
+}
+
+.modal-footer {
+    border-top : 1px solid #818DCA;
+    margin-top : 0;
 }
 
 /****************************************************/

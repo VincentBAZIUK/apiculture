@@ -1,5 +1,6 @@
 <?php include_once 'addhive.phtml'; ?>
 <?php include_once 'intervention.phtml'; ?>
+<?php include_once 'addintervention.phtml'; ?>
 
 <?php $username = substr($this->zfcUserIdentity()->getEmail(),0,strpos($this->zfcUserIdentity()->getEmail(),'@')); ?>
 <h3 class="dashboard_title">Bienvenue <?php echo $username ?></h3>
@@ -88,32 +89,4 @@
        jQuery.globalEval($('#javascript_content').html());
        $('.content_javascript_hive').html($('#content_infoWindow').html());
     });
-
-    $('#modalIntervention').on('show.bs.modal', function()
-    {
-        $.ajax({
-            url : $('#url_intervention').html(),
-            dataType : 'json',
-            type : 'POST',
-            data : {
-                'id_hive' : $('.hive_name').attr('id')
-            }
-
-        }).success(function(response){
-            if (response.length != 0) {
-                for (var intervention in response) {
-                    console.log(response[intervention]['date']);
-                    $('.list_interventions').append('<li>'+response[intervention]['description']+ ' ' + response[intervention]['date']+'</li>');
-                }
-            } else $('.list_interventions').append('<li>Il n\'y a pas d\'interventions sur cette ruche</li>');
-
-
-        });
-    });
-
-
-
-
-
-
 </script>
