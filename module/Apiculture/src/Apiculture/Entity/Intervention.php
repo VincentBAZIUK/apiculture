@@ -20,7 +20,7 @@ class Intervention {
      */
     public function setIdHive($idHive)
     {
-        $this->idHive = $idHive;
+        $this->id_hive = $idHive;
     }
 
     /**
@@ -84,7 +84,7 @@ class Intervention {
 
     /**
      * @var date
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="datetime")
      */
     protected $date;
 

@@ -32,19 +32,6 @@ class  ApicultureInterventionForm extends Form
         ));
 
         $this->add(array(
-            'name' => 'date',
-            'type' => 'Zend\Form\Element\Date',
-            'attributes' => array(
-                'placeholder' => 'Date',
-                'required' => 'required',
-            ),
-            'options' => array(
-                'label' => 'Date',
-                'class' => 'datepicker',
-            ),
-        ));
-
-        $this->add(array(
             'name' => 'id_hive',
             'type' => 'Zend\Form\Element\Hidden',
         ));

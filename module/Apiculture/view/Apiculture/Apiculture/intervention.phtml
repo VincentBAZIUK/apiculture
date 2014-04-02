@@ -12,7 +12,7 @@
             </ul>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAddIntervention">Ajouter une intervention</button>
+                <button id="addIdHiveToIntervention" type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAddIntervention">Ajouter une intervention</button>
                 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -41,6 +41,10 @@
 
 
         });
+    });
+    $('#addIdHiveToIntervention').click(function()
+    {
+        $('input[name=id_hive]').attr('value',$('.hive_name').attr('id'));
     });
 </script>
 

@@ -15,6 +15,7 @@ use Ivory\GoogleMap\Overlays\Marker;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\I18n\Validator\Int;
+use DateTime;
 
 class ApicultureController extends AbstractActionController
 {
@@ -131,8 +132,9 @@ class ApicultureController extends AbstractActionController
             if ($formIntervention->isValid()) {
                 $datas = $formIntervention->getData();
                 $intervention->setDescription($datas['description']);
-                $intervention->setDate($datas['date']);
-                $intervention->setIdHive($datas['id_hive']);
+                $intervention->setDate(new DateTime());
+                var_dump((int)$datas['id_hive']);
+                $intervention->setIdHive((int)$datas['id_hive']);
                 $em->persist($intervention);
                 $em->flush();
 
