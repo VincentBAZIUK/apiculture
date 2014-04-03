@@ -84,7 +84,7 @@ class Intervention {
 
     /**
      * @var date
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="string")
      */
     protected $date;
 

@@ -15,7 +15,6 @@ use Ivory\GoogleMap\Overlays\Marker;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\I18n\Validator\Int;
-use DateTime;
 
 class ApicultureController extends AbstractActionController
 {
@@ -123,27 +122,27 @@ class ApicultureController extends AbstractActionController
 
     public function addinterventionAction()
     {
-        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-        $formIntervention = new ApicultureInterventionForm($em);
-        $request = $this->getRequest();
-        if ($request->isPost()) {
-            $intervention = new Intervention();
-            $formIntervention->setData($request->getPost());
-            if ($formIntervention->isValid()) {
-                $datas = $formIntervention->getData();
-                $intervention->setDescription($datas['description']);
-                $intervention->setDate(new DateTime());
-                var_dump((int)$datas['id_hive']);
-                $intervention->setIdHive((int)$datas['id_hive']);
-                $em->persist($intervention);
-                $em->flush();
-
-                return $this->redirect()->toRoute('dashboard');
-            }
+        $response = $this->getResponse();
+        $intervention = new Intervention();
+        $values = array();
+        $datas = $this->getRequest()->getPost('datas',null);
+        $fields = explode('&',$datas);
+        foreach ($fields as $field) {
+            $value = (explode('=',$field));
+            $values[] = $value;
         }
-
-        return new ViewModel(array('formIntervention' => $formIntervention));
-
+        foreach ($values as $value) {
+            if ($value[0] == 'id_hive' && !empty($value[1]))
+                $intervention->setIdHive((int)$value[1]);
+            if ($value[0] == 'description' && !empty($value[1]))
+                $intervention->setDescription(strtr ($value[1], '+', ' '));
+        }
+        $intervention->setDate(date('j/m/Y'));
+        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+        $em->persist($intervention);
+        $em->flush();
+        $response->setContent(\Zend\Json\Json::encode($intervention));
+        return $response;
     }
 
 

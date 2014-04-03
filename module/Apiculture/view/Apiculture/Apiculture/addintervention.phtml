@@ -30,6 +30,7 @@ echo $this->form()->openTag($form);
                             </div>
                         </div>
                     </dd>
+                    <span class="hidden" id="urlAddIntervention"><?php echo $this->url('addintervention'); ?></span>
 
 
 
@@ -54,11 +55,19 @@ echo $this->form()->openTag($form);
 <?php echo $this->form()->closeTag($form); ?>
 
 <script>
-    $('#addIntervention').submit(function(e)
+    $('#addIntervention').submit(function(event)
     {
-        e.preventDefault();
-        // TO DO
-        // envoyer le formulaire en ajax avec serialize
-        // au succes, fermer la modal et voir le nouveau résultat sur la liste des interventions
-    })
+        event.preventDefault();
+        $.ajax({
+            url : $('#urlAddIntervention').html(),
+            dataType : 'json',
+            type : 'POST',
+            data : {
+                'datas' : $(this).serialize()
+            }
+        }).success(function(response){
+            $('#modalAddIntervention').modal('hide');
+            $('#modalIntervention').modal('show');
+        });
+    });
 </script>

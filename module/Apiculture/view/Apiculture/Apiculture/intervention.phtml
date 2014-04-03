@@ -34,6 +34,7 @@
             if (response.length != 0) {
                 var i =0;
                 for (var intervention in response) {
+                    console.log(response[intervention]['date']['date']);
                     i++;
                     $('.list_interventions').append('<li class="border">'+response[intervention]['description']+ ' le ' + response[intervention]['date']+'</li>');
                 }

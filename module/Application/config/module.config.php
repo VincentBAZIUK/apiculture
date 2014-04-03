@@ -76,6 +76,16 @@ return array(
                     ),
                 ),
             ),
+            'addintervention' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/dashboard/addintervention',
+                    'defaults' => array(
+                        'controller' => 'Apiculture\Controller\Apiculture',
+                        'action'     => 'addintervention',
+                    ),
+                ),
+            ),
             'intervention' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
