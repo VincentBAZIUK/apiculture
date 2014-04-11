@@ -211,6 +211,10 @@ ul.list_interventions li:last-child {
     border-bottom : none;
 }
 
+div.pagination {
+    width : 150px;
+    margin : 0 auto;
+}
 
 
 /****************************************************/

@@ -10,6 +10,7 @@
             <ul class="list_interventions">
 
             </ul>
+            <div><a class="pagination" id="1" href="#">1</a>&nbsp;<a class="pagination" id="2" href="#">2</a>&nbsp;<a class="pagination" id="3" href="#">3</a>&nbsp;<a class="pagination" id="4" href="#">4</a></div>
             </div>
             <div class="modal-footer">
                 <button id="addIdHiveToIntervention" type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAddIntervention">Ajouter une intervention</button>
@@ -24,25 +25,46 @@
         $('.list_interventions').empty();
         $.ajax({
             url : $('#url_intervention').html(),
-            dataType : 'json',
             type : 'POST',
+            dataType  :'json',
             data : {
-                'id_hive' : $('.hive_name').attr('id')
+                id_hive : $('.hive_name').attr('id'),
             }
 
         }).success(function(response){
+            console.log('succes');
+            console.log(response);
             if (response.length != 0) {
-                var i =0;
                 for (var intervention in response) {
-                    console.log(response[intervention]['date']['date']);
-                    i++;
                     $('.list_interventions').append('<li class="border">'+response[intervention]['description']+ ' le ' + response[intervention]['date']+'</li>');
                 }
             } else $('.list_interventions').append('<li>Il n\'y a pas d\'interventions sur cette ruche</li>');
-
-
         });
     });
+
+    $('.pagination').click(function()
+    {
+        $('.list_interventions').empty();
+        var npage = $(this).attr('id');
+        console.log(npage);
+        $.ajax({
+            url : $('#url_intervention').html(),
+            type : 'POST',
+            dataType : 'json',
+            data : {
+                id_hive : $('.hive_name').attr('id'),
+                page : npage
+            }
+        }).success(function(datas){
+            if (datas.length != 0) {
+                for (var intervention in datas) {
+                    $('.list_interventions').append('<li class="border">'+datas[intervention]['description']+ ' le ' + datas[intervention]['date']+'</li>');
+                }
+            } else $('.list_interventions').append('<li>Il n\'y a pas d\'interventions sur cette ruche</li>');
+        });
+    });
+
+
     $('#addIdHiveToIntervention').click(function()
     {
         $('input[name=id_hive]').attr('value',$('.hive_name').attr('id'));
