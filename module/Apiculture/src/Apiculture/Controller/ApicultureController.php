@@ -40,7 +40,6 @@ class ApicultureController extends AbstractActionController
                     $marker->setOption('class','marker');
                     $infoWindow = new InfoWindow();
                     $javascript_content = "$('div.hidden').removeClass('hidden')";
-                    //$javascript_content = "$('.content_javascript_hive').html(".'$results[$i]->getName()'.")";
                     //$javascript_content = "alert('test')";
                     $infoWindow->setContent("
                         <div id='content_infoWindow'>
@@ -80,55 +79,41 @@ class ApicultureController extends AbstractActionController
         $begin = ($page * $nb_results_per_page)-$nb_results_per_page;
         $id_hive = $this->getRequest()->getPost('id_hive', null);
         $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-        $query = $em->createQuery(
-            'SELECT i.date, i.description
+        $query = $em->createQuery('
+            SELECT i.date, i.description
             FROM Apiculture\Entity\Intervention i
             WHERE i.id_hive = :id
             ORDER BY i.date DESC')
             ->setFirstResult($begin)
             ->setMaxResults($nb_results_per_page)
             ->setParameter('id', $id_hive)
-            //->setParameter('page', $page)
-            //->setParameter('nb_results_per_page',$nb_results_per_page)
         ;
 
-        //var_dump($id_hive,$page);
         $results = $query->getResult();
         foreach ($results as $result) {
             $response[] = $result;
         }
-
 
         $interventions->setContent(\Zend\Json\Json::encode($response));
         return $interventions;
     }
 
-    /*public function interventionPaginationAction()
+    public function displaypaginationAction()
     {
-        $interventionsPage = $this->getResponse();
-        $response = array();
-        $nb_results_per_page = 10;
-        $page = (int)$this->getRequest()->getPost('page');
+        $nb_pages = $this->getResponse();
         $id_hive = $this->getRequest()->getPost('id_hive',null);
         $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-        $query = $em->createQuery(
-            'SELECT i.date, i.description
+        $query = $em->createQuery('
+            SELECT count(i.id)
             FROM Apiculture\Entity\Intervention i
             WHERE i.id_hive = :id')
-            ->setParameter('id', $id_hive)
-            ->setFirstResult($page*$nb_results_per_page)
-            ->setMaxResults(30);
-        $results = $query->getResult();
-        foreach ($results as $result) {
-            $response[] = $result;
-        }
-        //var_dump($id_hive);
+            ->setParameter('id',$id_hive);
 
-        $interventionsPage->setContent(\Zend\Json\Json::encode($response));
-        return $interventionsPage;
+        $result = $query->getSingleresult();
 
-
-    }*/
+        $nb_pages->setContent(\Zend\Json\Json::encode($result));
+        return $nb_pages;
+    }
 
     public function addhiveAction()
     {

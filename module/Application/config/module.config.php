@@ -96,16 +96,16 @@ return array(
                     ),
                 ),
             ),
-            /*'interventionPagination' => array(
+            'displaypagination' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
-                    'route'    => '/dashboard/intervention',
+                    'route'    => '/dashboard/intervention/pagination',
                     'defaults' => array(
                         'controller' => 'Apiculture\Controller\Apiculture',
-                        'action'     => 'interventionPagination',
+                        'action'     => 'displaypagination',
                     ),
                 ),
-            ),*/
+            ),
 
 
 
