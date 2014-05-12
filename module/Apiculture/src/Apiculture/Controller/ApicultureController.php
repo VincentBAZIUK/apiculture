@@ -98,6 +98,75 @@ class ApicultureController extends AbstractActionController
         return $interventions;
     }
 
+    public function productionAction()
+    {
+        /*$productions = $this->getResponse();
+        $response = array();
+        $id_hive = $this->getRequest()->getPost('id_hive',null);
+        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+        $query = $em->createQuery('
+            SELECT p.date, p.production
+            FROM Apiculture\Entity\Production p
+            WHERE p.id_hive = :id
+            ORDER BY p.date')
+            ->setParameter('id', $id_hive)
+        ;
+
+        $results = $query->getResult();
+        foreach ($results as $result) {
+            $response[] = $result;
+        }
+
+        $productions->setContent(\Zend\Json\Json::encode($response));
+        return $productions;*/
+
+        $id_hive = $this->getRequest()->getPost('id_hive',null);
+        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+        $query = $em->createQuery('
+            SELECT p.date, p.production
+            FROM Apiculture\Entity\Production p
+            WHERE p.id_hive = :id
+            ORDER BY p.date DESC')
+            ->setParameter('id', $id_hive)
+        ;
+
+
+        $table = array();
+        $table['cols'] = array(
+
+            // Labels for your chart, these represent the column titles
+            // Note that one column is in "string" format and another one is in "number" format as pie chart only required "numbers" for calculating percentage and string will be used for column title
+            array('label' => 'Date', 'type' => 'string'),
+            array('label' => 'Production', 'type' => 'number')
+
+        );
+
+        $rows = array();
+        //while($r = mysql_fetch_assoc($sth)) {
+            //$temp = array();
+            // the following line will be used to slice the Pie chart
+           // $temp[] = array('v' => (string) $r['Weekly_task']);
+
+            // Values of each slice
+            //$temp[] = array('v' => 4);
+        $results = $query->getResult();
+        foreach ($results as $result) {
+            $rows[] = array('c' => array( array('v'=>$result['date']), array('v'=>$result['production'])));
+        }
+
+        $table['rows'] = $rows;
+        $productions = $this->getResponse();
+        $productions->setContent(\Zend\Json\Json::encode($table));
+        return $productions;
+
+
+
+
+
+
+
+    }
+
     public function displaypaginationAction()
     {
         $nb_pages = $this->getResponse();

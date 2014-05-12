@@ -6,6 +6,7 @@
                 <h4 class="modal-title" id="myModalLabel">Liste des interventions</h4>
             </div>
             <div class="modal-body">
+                <span id="url_production" class="hidden"><?php echo $this->url('production'); ?></span>
                 <div id="chart_div"></div>
 
 
@@ -20,22 +21,78 @@
 </div>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script>
-    google.load('visualization', '1.0', {'packages':['corechart']});
+    /*google.load('visualization', '1.0', {'packages':['corechart']});
     google.setOnLoadCallback(drawChart);
     function drawChart() {
         var data = new google.visualization.DataTable();
         data.addColumn('date', 'Mois');
         data.addColumn('number', 'Production (g)');
-        data.addRows([[new Date(2008,3,0), 3]]);
-        data.addRows([[new Date(2010,11,8), 10]]);
+        $.ajax({
+            url : $('#url_production').html(),
+            type : 'POST',
+            dataType  :'json',
+            data : {
+                id_hive : $('.hive_name').attr('id'),
+            }
+        }).success(function(response){
+            if (response.length != 0) {
+                for (var production in response) {
+                    data.addRows([
+                        [new Date(response[production]['date']), response[production]['production']]}],
+                }
+            } else $('.list_interventions').append('<li>Il n\'y a pas d\'interventions sur cette ruche</li>');
+        });
+
         var options = {'title':'Production',
             'width':600,
             'height':300};
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
         chart.draw(data, options);
+    }*/
+        google.load('visualization', '1', {'packages':['corechart']});
+        google.setOnLoadCallback(initialize);
+        function drawChart() {
+            var jsonData = $.ajax({
+                url: $('#url_production').html(),
+                type : 'POST',
+                dataType:'json',
+                data : {
+                    id_hive : $('.hive_name').attr('id')
+                },
+                async: false
+            }).responseText;
+            console.log(jsonData);
+            /*var courses = {
+                "fruits": [
+                    { "kiwis": 3,
+                        "mangues": 4,
+                        "pommes": null
+                    },
+                    { "panier": true },
+                ],
+                "legumes":
+                { "patates": "amandine",
+                    "figues": "de barbarie",
+                    "poireaux": false
+                }
+            };*/
+
+        var data = new google.visualization.DataTable(jsonData);
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, {width: 400, height: 240});
+        }
+
+    function initialize () {
+        $('.production_hive').click(function() {
+            drawChart();
+        });
     }
 
 
 
-    </script>
+
+
+
+
+</script>

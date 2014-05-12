@@ -96,6 +96,16 @@ return array(
                     ),
                 ),
             ),
+            'production' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/dashboard/production',
+                    'defaults' => array(
+                        'controller' => 'Apiculture\Controller\Apiculture',
+                        'action'     => 'production',
+                    ),
+                ),
+            ),
             'displaypagination' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
