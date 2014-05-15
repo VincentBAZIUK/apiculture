@@ -50,6 +50,7 @@
 
         function displayPagination()
         {
+            if ($('.pages').length != 0) $('.pages').empty();
             $.ajax({
                 url : $('#url_display_pagination').html(),
                 type : 'POST',
@@ -62,9 +63,9 @@
                 if (response.length != 0) {
                     var nb_pages = response[1];
                     nb_pages = Math.ceil(nb_pages/10);
-                    console.log(nb_pages);
                     for (var i=1;i<=nb_pages;i++) {
-                        $('.pages').append('<li class=pagination id='+i+'>'+ i + '</li>');
+                        if (nb_pages != 1)
+                            $('.pages').append('<li class=pagination id='+i+'>'+ i + '</li>');
                     }
                 }
                 $('.pagination').click(function()

@@ -62,25 +62,12 @@
                 },
                 async: false
             }).responseText;
-            console.log(jsonData);
-            /*var courses = {
-                "fruits": [
-                    { "kiwis": 3,
-                        "mangues": 4,
-                        "pommes": null
-                    },
-                    { "panier": true },
-                ],
-                "legumes":
-                { "patates": "amandine",
-                    "figues": "de barbarie",
-                    "poireaux": false
-                }
-            };*/
 
-        var data = new google.visualization.DataTable(jsonData);
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, {width: 400, height: 240});
+            var data = new google.visualization.DataTable(jsonData);
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, {width: 400, height: 240});
+            var data = $.parseJSON(jsonData);
+            $('#chart_div').append('<p style="text-align:center">La production totale de cette rûche est de '+data.poids+' grammes.');
         }
 
     function initialize () {

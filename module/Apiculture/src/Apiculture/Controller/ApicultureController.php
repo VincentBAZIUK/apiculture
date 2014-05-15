@@ -12,6 +12,7 @@ use DoctrineModule\Stdlib\Hydrator\DoctrineObject;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlays\InfoWindow;
 use Ivory\GoogleMap\Overlays\Marker;
+use Zend\Form\Element\Date;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\I18n\Validator\Int;
@@ -83,7 +84,7 @@ class ApicultureController extends AbstractActionController
             SELECT i.date, i.description
             FROM Apiculture\Entity\Intervention i
             WHERE i.id_hive = :id
-            ORDER BY i.date DESC')
+            ORDER BY i.date DESC, i.id DESC')
             ->setFirstResult($begin)
             ->setMaxResults($nb_results_per_page)
             ->setParameter('id', $id_hive)
@@ -91,80 +92,48 @@ class ApicultureController extends AbstractActionController
 
         $results = $query->getResult();
         foreach ($results as $result) {
-            $response[] = $result;
+            $date = new \DateTime($result['date']);
+            $response[] = array('date'=>$date->format('d/m/Y'),'description' => $result['description']);
         }
 
         $interventions->setContent(\Zend\Json\Json::encode($response));
         return $interventions;
+
+
+
     }
 
     public function productionAction()
     {
-        /*$productions = $this->getResponse();
-        $response = array();
         $id_hive = $this->getRequest()->getPost('id_hive',null);
         $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
         $query = $em->createQuery('
             SELECT p.date, p.production
             FROM Apiculture\Entity\Production p
             WHERE p.id_hive = :id
-            ORDER BY p.date')
+            ORDER BY p.date DESC ')
             ->setParameter('id', $id_hive)
         ;
-
-        $results = $query->getResult();
-        foreach ($results as $result) {
-            $response[] = $result;
-        }
-
-        $productions->setContent(\Zend\Json\Json::encode($response));
-        return $productions;*/
-
-        $id_hive = $this->getRequest()->getPost('id_hive',null);
-        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-        $query = $em->createQuery('
-            SELECT p.date, p.production
-            FROM Apiculture\Entity\Production p
-            WHERE p.id_hive = :id
-            ORDER BY p.date DESC')
-            ->setParameter('id', $id_hive)
-        ;
-
 
         $table = array();
         $table['cols'] = array(
-
-            // Labels for your chart, these represent the column titles
-            // Note that one column is in "string" format and another one is in "number" format as pie chart only required "numbers" for calculating percentage and string will be used for column title
             array('label' => 'Date', 'type' => 'string'),
             array('label' => 'Production', 'type' => 'number')
-
         );
 
         $rows = array();
-        //while($r = mysql_fetch_assoc($sth)) {
-            //$temp = array();
-            // the following line will be used to slice the Pie chart
-           // $temp[] = array('v' => (string) $r['Weekly_task']);
-
-            // Values of each slice
-            //$temp[] = array('v' => 4);
+        $total = 0;
         $results = $query->getResult();
         foreach ($results as $result) {
             $rows[] = array('c' => array( array('v'=>$result['date']), array('v'=>$result['production'])));
+            $total += $result['production'];
         }
 
         $table['rows'] = $rows;
+        $table['poids'] = $total;
         $productions = $this->getResponse();
         $productions->setContent(\Zend\Json\Json::encode($table));
         return $productions;
-
-
-
-
-
-
-
     }
 
     public function displaypaginationAction()
@@ -215,6 +184,11 @@ class ApicultureController extends AbstractActionController
         return new ViewModel(array('form'=>$form));
     }
 
+    public function addproductionAction()
+    {
+        var_dump('un petit coucou du controller (action addproduction');
+    }
+
     public function addinterventionAction()
     {
         $response = $this->getResponse();
@@ -230,9 +204,9 @@ class ApicultureController extends AbstractActionController
             if ($value[0] == 'id_hive' && !empty($value[1]))
                 $intervention->setIdHive((int)$value[1]);
             if ($value[0] == 'description' && !empty($value[1]))
-                $intervention->setDescription(strtr ($value[1], '+', ' '));
+                $intervention->setDescription(urldecode(strtr ($value[1], '+', ' ')));
         }
-        $intervention->setDate(date('j/m/Y'));
+        $intervention->setDate(date('Y-m-j'));
         $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
         $em->persist($intervention);
         $em->flush();
@@ -253,32 +227,6 @@ class ApicultureController extends AbstractActionController
 
     }
 
-    public function updatehiveAction()
-    {
-        /*$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-        $form = new UpdateForm($em);
-        $form->get('submit')->setValue('Update');
-        $request = $this->getRequest();
-        $hive = $em->getRepository('Apiculture\Entity\Hive')->find(22);
-        $form->bind($hive);
-
-        if ($request->isPost()) {
-            $form->setDate($request->getPost());
-
-            if ($form->isValid()) {
-                $em->persist($hive);
-                $em->flush();
-
-                return $this->redirect()->toRoute('connected');
-            }
-        }
-
-        return new ViewModel(array(
-            'form' => $form,
-            'hive' => $hive
-            )
-        );*/
-    }
 
     public function checkaddhiveAction()
     {
