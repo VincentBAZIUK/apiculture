@@ -47,7 +47,7 @@ body {
 /****************************************************/
 /*                  ADD HIVE                        */
 /****************************************************/
-div.error.latitude, div.error.longitude {
+div.error.latitude, div.error.longitude, div.error.production, div.error.date {
   color: #B94A48;
   font-size: 16px;
   padding-left : 10px;

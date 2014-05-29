@@ -7,6 +7,8 @@ use Apiculture\Entity\Intervention;
 use Apiculture\Form\UpdateForm;
 use Apiculture\Form\ApicultureAddForm;
 use Apiculture\Form\ApicultureInterventionForm;
+use Apiculture\Form\ApicultureProductionForm;
+use Apiculture\Entity\Production;
 use Ivory\GoogleMap\Helper\MapHelper;
 use DoctrineModule\Stdlib\Hydrator\DoctrineObject;
 use Ivory\GoogleMap\Map;
@@ -16,6 +18,7 @@ use Zend\Form\Element\Date;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\I18n\Validator\Int;
+use Zend\I18n\Validator\Float;
 
 class ApicultureController extends AbstractActionController
 {
@@ -60,10 +63,12 @@ class ApicultureController extends AbstractActionController
 
         $form = new ApicultureAddForm($em);
         $formIntervention = new ApicultureInterventionForm($em);
+        $formProduction = new ApicultureProductionForm($em);
 
          return new ViewModel(array('map' => $map,
                                     'form' => $form,
                                     'formIntervention' => $formIntervention,
+                                    'formProduction' => $formProduction,
                                     'mapHelper' => $mapHelper,
                                     'hives' => $results,
                                     'user' => $this->zfcUserAuthentication()->getIdentity()));
@@ -111,7 +116,7 @@ class ApicultureController extends AbstractActionController
             SELECT p.date, p.production
             FROM Apiculture\Entity\Production p
             WHERE p.id_hive = :id
-            ORDER BY p.date DESC ')
+            ORDER BY p.date')
             ->setParameter('id', $id_hive)
         ;
 
@@ -125,7 +130,8 @@ class ApicultureController extends AbstractActionController
         $total = 0;
         $results = $query->getResult();
         foreach ($results as $result) {
-            $rows[] = array('c' => array( array('v'=>$result['date']), array('v'=>$result['production'])));
+            $date = date_create($result['date']);
+            $rows[] = array('c' => array( array('v'=>date_format($date, 'd/m/Y')), array('v'=>$result['production'])));
             $total += $result['production'];
         }
 
@@ -186,7 +192,43 @@ class ApicultureController extends AbstractActionController
 
     public function addproductionAction()
     {
-        var_dump('un petit coucou du controller (action addproduction');
+        $response = $this->getResponse();
+        $validator = new Int();
+        $errors = array();
+        $production = new Production();
+        $values = array();
+        $datas = $this->getRequest()->getPost('datas',null);
+        $fields = explode('&',$datas);
+        foreach ($fields as $field) {
+            $value = (explode('=',$field));
+            $values[] = $value;
+        }
+
+        foreach ($values as $value) {
+            if ($value[0] == 'id_hive' && !empty($value[1]))
+                $production->setIdHive((int)$value[1]);
+            if ($value[0] == 'production' && !empty($value[1]) && $validator->isValid($value[1]))
+                $production->setProduction($value[1]);
+            if ($value[0] == 'date' && !empty($value[1]))
+                $production->setDate(urldecode($value[1]));
+            if ($value[0] == 'production' && !$validator->isValid($value[1]))
+                $errors['production'] = 'Production invalide';
+            if ($value[0] == 'date' && empty($value[1]))
+                $errors['date'] = 'Date invalide';
+
+        }
+
+        if (!empty($errors)) {
+            $response->setContent(\Zend\Json\Json::encode($errors));
+            return $response;
+        }
+        else {
+            $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+            $em->persist($production);
+            $em->flush();
+            $response->setContent(\Zend\Json\Json::encode($production));
+            return $response;
+        }
     }
 
     public function addinterventionAction()

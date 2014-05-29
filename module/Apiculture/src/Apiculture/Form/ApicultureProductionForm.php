@@ -25,7 +25,7 @@ class  ApicultureProductionForm extends Form
             'attributes' => array(
                 'placeholder' => 'Entrer la date de production',
                 'required' => 'required',
-                'class' => 'datepicker'
+                'id' => 'datepicker'
             ),
             'options' => array(
                 'label' => 'Date',

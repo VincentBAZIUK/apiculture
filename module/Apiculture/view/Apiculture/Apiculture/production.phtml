@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Liste des interventions</h4>
+                <h4 class="modal-title" id="myModalLabel">Production de la ruche</h4>
             </div>
             <div class="modal-body">
                 <span id="url_production" class="hidden"><?php echo $this->url('production'); ?></span>
@@ -12,8 +12,7 @@
 
             </div>
             <div class="modal-footer">
-                <button id="addProduction" type="button" class="btn btn-info">Production</button>
-                <button id="addIdHiveToIntervention" type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAddIntervention">Ajouter une intervention</button>
+                <button id="addIdHiveToProduction" type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAddProduction">Ajouter une récolte</button>
                 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -21,35 +20,6 @@
 </div>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script>
-    /*google.load('visualization', '1.0', {'packages':['corechart']});
-    google.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('date', 'Mois');
-        data.addColumn('number', 'Production (g)');
-        $.ajax({
-            url : $('#url_production').html(),
-            type : 'POST',
-            dataType  :'json',
-            data : {
-                id_hive : $('.hive_name').attr('id'),
-            }
-        }).success(function(response){
-            if (response.length != 0) {
-                for (var production in response) {
-                    data.addRows([
-                        [new Date(response[production]['date']), response[production]['production']]}],
-                }
-            } else $('.list_interventions').append('<li>Il n\'y a pas d\'interventions sur cette ruche</li>');
-        });
-
-        var options = {'title':'Production',
-            'width':600,
-            'height':300};
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }*/
         google.load('visualization', '1', {'packages':['corechart']});
         google.setOnLoadCallback(initialize);
         function drawChart() {
@@ -65,7 +35,7 @@
 
             var data = new google.visualization.DataTable(jsonData);
             var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-            chart.draw(data, {width: 400, height: 240});
+            chart.draw(data, {width: 540, height: 300});
             var data = $.parseJSON(jsonData);
             $('#chart_div').append('<p style="text-align:center">La production totale de cette rûche est de '+data.poids+' grammes.');
         }
@@ -74,12 +44,10 @@
         $('.production_hive').click(function() {
             drawChart();
         });
+
+        $('#addIdHiveToProduction').click(function()
+        {
+            $('input[name=id_hive]').attr('value',$('.hive_name').attr('id'));
+        });
     }
-
-
-
-
-
-
-
 </script>

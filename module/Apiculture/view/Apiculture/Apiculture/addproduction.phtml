@@ -1,0 +1,99 @@
+<?php
+$form = $this->formProduction;
+$form->setAttribute('action', $this->url('add', array('action' => 'addproduction')));
+$form->setAttribute('id','addProduction');
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+<div class="modal fade" id="modalAddProduction" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Ajouter une récolte</h4>
+            </div>
+            <div class="modal-body">
+                <dl class="zend-form form-horizontal">
+                    <dd>
+                        <div class="form-group">
+                            <div class="col-sm-9 col-lg-9 col-xs-9">
+                                <?php echo $this->formHidden($form->get('id_hive')) ?>
+                            </div>
+                        </div>
+                    </dd>
+                    <dd>
+                        <div class="error production col-sm-offset-3 col-xs-offset-3 col-lg-offset-3" style="display:none"></div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-lg-3 col-xs-3"><?php echo $this->formLabel($form->get('production')) ?></label>
+                            <div class="col-sm-9 col-lg-9 col-xs-9">
+                                <?php $form->get('production')->setAttribute('class','form-control')?>
+                                <?php echo $this->formInput($form->get('production')) ?>
+                            </div>
+                        </div>
+                        <div class="error date col-sm-offset-3 col-xs-offset-3 col-lg-offset-3" style="display:none"></div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-lg-3 col-xs-3"><?php echo $this->formLabel($form->get('date')) ?></label>
+                            <div class="col-sm-9 col-lg-9 col-xs-9">
+                                <?php $form->get('date')->setAttribute('class','form-control datepicker')?>
+                                <?php echo $this->formInput($form->get('date')) ?>
+                            </div>
+                        </div>
+                    </dd>
+                    <span class="hidden" id="urlAddProduction"><?php echo $this->url('addproduction'); ?></span>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                <?php echo $this->formRow($form->get('submitAddProduction')); ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo $this->form()->closeTag($form); ?>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script>
+    $(function() {
+        $( "#datepicker" ).datepicker({
+            altField: "#datepicker",
+            closeText: 'Fermer',
+            prevText: 'Précédent',
+            nextText: 'Suivant',
+            currentText: 'Aujourd\'hui',
+            monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+            monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+            dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+            dayNamesShort: ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.', 'Dim.'],
+            dayNamesMin: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
+            weekHeader: 'Sem.',
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+    $('#addProduction').submit(function(event)
+    {
+        $('.error').hide();
+        event.preventDefault();
+        $.ajax({
+            url : $('#urlAddProduction').html(),
+            dataType : 'json',
+            type : 'POST',
+            data : {
+                'datas' : $(this).serialize()
+            }
+        }).success(function(response){
+            if (typeof(response['production']) != 'undefined') {
+                $('.production').html(response['production']);
+                $('.production').show();
+            }
+            if (typeof(response['date'] != 'undefined')) {
+                $('.date').html(response['date']);
+                $('.date').show();
+            }
+
+            if (JSON.stringify(response) == '{}'){
+                $('#modalAddProduction').modal('hide');
+                $('.production_hive').click();
+            }
+        });
+    });
+</script>
